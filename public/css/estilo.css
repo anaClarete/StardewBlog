@@ -59,13 +59,27 @@ body{
   display: flex;
   justify-content: center;
   margin-top: 60px;
+  border-radius: 20%;
 }
 
 .conteudo{
-  
   width: 70%;
-  height: 600px;
-  background-color: rgba(204, 255, 255, 0.6);
-  overflow-y: scroll;
+  max-height: 600px;
+  border-radius: 40px;
+  background-color: rgba(204, 255, 255, 0.8);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 50px;
+}
 
+.conteudo::-webkit-scrollbar{
+  display: none;
+}
+
+li{
+  gap: 10px;
 }
