@@ -64,7 +64,7 @@ body{
 
 .conteudo{
   width: 70%;
-  max-height: 700px;
+  max-height: 70vh;
   border-radius: 40px;
   background-color: rgba(204, 255, 255, 0.8);
   overflow-y: auto;
@@ -74,6 +74,7 @@ body{
   align-items: flex-start;
   gap: 10px;
   padding: 50px;
+  border
 }
 
 .conteudo::-webkit-scrollbar{
@@ -109,8 +110,7 @@ body{
 .intro-pesca{
   display: flex;
   gap: 50px;
-  /* padding: 50px; */
-  margin-left: 80px;
+
 }
 
 .intro-pecuaria{
