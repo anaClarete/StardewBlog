@@ -2,141 +2,496 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Stardew Blog| Página Inicial</title>
+  <title>Stardew Blog| Página Inicial</title>
 
-    <script src="./js/sessao.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="./js/sessao.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="icon" href="./assets/icon/favicon2.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
 <body>
-    <div class="header">
-      <div class="titulo">Stardew Blog</div>
-      <div class="navbar">
-        <span> Login | </span>
-        <span>  Cadastro | </span>
-        <span> Calculadora de recursos | </span>
-        <span> Dashboards</span>
-      </div>
-      
-      
+  <div class="header">
+    <div class="titulo">Stardew Blog</div>
+    <div class="navbar">
+      <a href="login.html"> Login | </a>
+      <a href="cadastro.html"> Cadastro | </a>
+      <span> Calculadora de recursos | </span>
+      <span> Dashboards</span>
     </div>
 
-    <div class="container">
-      <div class="conteudo">
-        <h3>Olá, fazendeiro! 🌱 Seja muito bem-vindo ao Stardew Blog!</h3>
 
-        <p>Este espaço foi criado para ser o seu ponto de apoio dentro do jogo, reunindo as melhores dicas para você evoluir no cultivo, na mineração, na pesca e na criação de animais.</p>
-        <p>Aqui você também encontra uma calculadora de recursos, que ajuda a planejar a fabricação de itens essenciais, aumentando sua produtividade e maximizando seus lucros.</p>
-        <p>Além disso, disponibilizamos gráficos de desempenho, que mostram o seu retorno com base no foco que você escolher dentro do jogo — assim, fica muito mais fácil tomar decisões estratégicas.</p>
-        <p>E não para por aí! Temos também um fórum, onde você pode compartilhar suas experiências, tirar dúvidas e trocar ideias com outros jogadores da comunidade 💛</p>
+  </div>
 
-        <br>
-        <br>
-        <br>
+  <div class="container">
+    <div class="conteudo">
+      <h3>Olá, fazendeiro! 🌱 Seja muito bem-vindo ao Stardew Blog!</h3>
+
+      <p>Este espaço foi criado para ser o seu ponto de apoio dentro do jogo, reunindo as melhores dicas para você
+        evoluir no cultivo, na mineração, na pesca e na criação de animais.</p>
+      <p>Aqui você também encontra uma calculadora de recursos, que ajuda a planejar a fabricação de itens essenciais,
+        aumentando sua produtividade e maximizando seus lucros.</p>
+      <p>Além disso, disponibilizamos gráficos de desempenho, que mostram o seu retorno com base no foco que você
+        escolher dentro do jogo — assim, fica muito mais fácil tomar decisões estratégicas.</p>
+      <p>E não para por aí! Temos também um fórum, onde você pode compartilhar suas experiências, tirar dúvidas e trocar
+        ideias com outros jogadores da comunidade 💛</p>
+
+      <br>
+      <br>
+      <br>
 
 
-        <h3>Personagens de extrema importância no começo do jogo:</h3>
-        <img src="assets/imgs/robin.png"><p>A Robin será de extrema importância para te ajudar no começo do jogo. Por um preço justo e a matéria prima necessária, ela te ajudará levantando construções essenciais para seu desenvolvimento no jogo: seu celeiros, moinhos e silos serão construídos por ela.</p>
-        <p>Horário de funcionamento:
-          <p>Segunda a sexta: 9h às 17h
+      <h3>Personagens de extrema importância no começo do jogo:</h3>
+
+      <div class="personagens">
+        <div class="imagem"><img src="assets/imgs/robin.png"></div>
+        <div class="text">
+          <p>A Robin será de extrema importância para te ajudar no começo do jogo. Por um preço justo e a matéria prima
+            necessária, ela te ajudará levantando construções essenciais para seu desenvolvimento no jogo: seu celeiros,
+            moinhos e silos serão construídos por ela.</p>
+          <br>
+          <p style="font-weight: bold;">Horário de funcionamento:</p>
+
+          <p>Segunda a sexta: 9h às 17h</p>
           <p>Sábado: 9h às 17h</p>
-          Domingo: ❌ Fechado</p>
-        </p>
-        <img src="assets/imgs/pierre.png"><p>O Pierre é dono e administrador do Armazém do Pierre e vai te fornecer as sementes e fertilizantes da melhor qualidade, o que vai te ajudar muito nesse primeiro momento.</p>
-        <p>Horário de funcionamento da loja: Segunda a sexta: 9h às 17h
+          <p>Domingo: ❌ Fechado</p>
+
+        </div>
+      </div>
+
+      <div class="personagens">
+        <div class="imagem">
+          <img src="assets/imgs/pierre.png">
+        </div>
+        <div class="text">
+          <p>O Pierre é dono e administrador do Armazém do Pierre e vai te fornecer as sementes e fertilizantes da
+            melhor
+            qualidade, o que vai te ajudar muito nesse primeiro momento.</p>
+          <br>
+          <p style="font-weight: bold;">Horário de funcionamento da loja:</p>
+          <p>Segunda a sexta: 9h às 17h</p>
           <p>Sábado: 9h às 17h</p>
           <p>Quarta-feira: ❌ Fechado</p>
-        </p>
-        <img src="assets/imgs/clint.png" ><p>O Clint mora do outro lado do rio, e ele é o ferreiro local. Recomendo que sempre procure a loja dele antes de começar a se aventurar nas cavernas do jogo. Uma boa picareta e espada te ajudarão muito nessas explorações.</p>
-        <p>Horário de funcionamento da loja: 
+          </p>
+        </div>
+      </div>
+
+      <div class="personagens">
+        <div class="imagem">
+          <img src="assets/imgs/clint.png">
+        </div>
+        <div class="text">
+          <p>O Clint mora do outro lado do rio, e ele é o ferreiro local. Recomendo que sempre procure a loja dele antes
+            de
+            começar a se aventurar nas cavernas do jogo. Uma boa picareta e espada te ajudarão muito nessas explorações.
+          </p>
+          <br>
+          <p style="font-weight: bold;">Horário de funcionamento da loja:</p>
           <p>Segunda a sexta: 9h às 16h</p>
-          Sábado: 9h às 16h</p>
-        <img src="assets/imgs/marnie.png"><p>A Marnie reside no Rancho da Marnie e comercializa rações, animais e feno. Observação: Quase sempre, quando você precisar da Marnie, ele não estará na loja, então eu compraria um catálogo assim que fosse possível, para evitar que os animais morram de fome.</p>
-        <p>Horário de funcionamento da loja: 9h às 16h, mas fecha segunda e terça 😅 </p>
+          <p>Sábado: 9h às 16h</p>
+        </div>
+      </div>
 
-        <br>
-        <br>
-        <br>
+      <div class="personagens">
+        <div class="imagem">
+          <img src="assets/imgs/marnie.png">
+        </div>
+        <div class="text">
+          <p>A Marnie reside no Rancho da Marnie e comercializa rações, animais e feno. Observação: Quase sempre, quando
+            você precisar da Marnie, ele não estará na loja, então eu compraria um catálogo assim que fosse possível,
+            para evitar que os animais morram de fome.</p>
+          <br>
+          <p style="font-weight: bold;">Horário de funcionamento da loja:</p>
+          <p>9h às 16h, mas fecha segunda e terça 😅</p>
+        </div>
+      </div>
 
-        <h3>Dicas importantes para iniciantes no jogo:</h3>
-        <ul>
-          <li>Não gaste energia desnecessariamente limpando toda a fazenda logo no início. Ao assumir a fazenda de seu falecido avô, as coisas estarão em condições bem precárias, então o melhor a se fazer é arregaçar as mangas e começar a limpar sua terra. Mas apesar disso é importante lembrar que no começo do jogo você não tem necessidade de gastar muita energia de forma desnecessária, então vá com calma e evite desmaiar, pois cada vez que isso acontece os moradores te cobrarão uma pequena fortuna da conta do hospital</li>
-          <li>Construa baús: No começo de sua jornada, sua mochila mais vai estar para uma pochete de tão pequena. E enquanto não tiver as moedas necessárias para comprar a melhoria na loja do Pierre, criar baús para armazenar os materias que for coletando irá te auxiliar.</li>
+
+
+      <br>
+      <br>
+      <br>
+
+      <h3>Dicas importantes para iniciantes no jogo:</h3>
+      <div class="dicas">
+        <div class="imagem">
+          <img src="assets/imgs/tired.jpg" width="300px">
+        </div>
+        <div class="text">
+          <p>Não gaste energia desnecessariamente limpando toda a fazenda logo no início. Ao assumir a fazenda de seu
+            falecido avô, as coisas estarão em condições bem precárias, então o melhor a se fazer é arregaçar as mangas
+            e
+            começar a limpar sua terra. Mas apesar disso é importante lembrar que no começo do jogo você não tem
+            necessidade de gastar muita energia de forma desnecessária, então vá com calma e evite desmaiar, pois cada
+            vez
+            que isso acontece os moradores te cobrarão uma pequena fortuna da conta do hospital</p>
+        </div>
+      </div>
+      <div class="dicas">
+        <div class="imagem">
           <img src="assets/imgs/bau.jpg" width="300px">
-          <li>Com tantas possibilidades do que fazer em Stardew Valley, é possível se sentir um pouco perdido sobre o que priorizar no início. Porém, a melhor coisa é se concentrar na sua plantação no começo, aproveitando o resto do tempo para minerar e coletar outros recursos espalhados para o mapa, o que ajudará a juntar dinheiro para novas ferramentas e melhorias para sua casa ao longo do gameplay.</li>
+        </div>
+        <div class="text">
+          <p>Construa baús: No começo de sua jornada, sua mochila mais vai estar para uma pochete de tão pequena. E
+            enquanto não tiver as moedas necessárias para comprar a melhoria na loja do Pierre, criar baús para
+            armazenar
+            os materias que for coletando irá te auxiliar.</p>
+        </div>
+      </div>
+      <div class="dicas">
+        <div class="imagem">
           <img src="assets/imgs/plantacao.jpg" width="300px">
-          <li>E falando em perder dinheiro, assim que você começar a plantar, os corvos da região vão decidir que sua fazenda é um ótimo lugar para conseguir um lanchinho gratuito, atacando periodicamente suas colheitas.Uma forma simples de evitar esse problema são os espantalhos, que podem ser criados desde o início, com cada um protegendo uma região circular de 8x8.</li>
+        </div>
+        <div class="text">
+          <p>Com tantas possibilidades do que fazer em Stardew Valley, é possível se sentir um pouco perdido sobre o que
+            priorizar no início. Porém, a melhor coisa é se concentrar na sua plantação no começo, aproveitando o resto
+            do
+            tempo para minerar e coletar outros recursos espalhados para o mapa, o que ajudará a juntar dinheiro para
+            novas ferramentas e melhorias para sua casa ao longo do gameplay.</p>
+        </div>
+      </div>
+      <div class="dicas">
+        <div class="imagem">
           <img src="assets/imgs/espantalho.jpg" width="300px">
-          <li>Depois de muito trabalho e exploração, chegou a hora de se recolher para descansar. Porém, sua jornada ainda não acabou! Ao voltar para a cabana, é hora de assistir TV antes de dormir, porque os canais de Stardew Valley oferecem informações valiosas para sua aventura.  O canal de previsão do tempo explica como estará o tempo no dia seguinte, outro canal prevê sua sorte, e nos dias que ela estiver boa você terá mais sucesso encontrando itens em latas de lixo, pescando e obtendo materiais raros nas minas.</li>
+        </div>
+        <div class="text">
+          <p>E falando em perder dinheiro, assim que você começar a plantar, os corvos da região vão decidir que sua
+            fazenda é um ótimo lugar para conseguir um lanchinho gratuito, atacando periodicamente suas colheitas.Uma
+            forma simples de evitar esse problema são os espantalhos, que podem ser criados desde o início, com cada um
+            protegendo uma região circular de 8x8.</p>
+        </div>
+      </div>
+
+      <div class="dicas">
+        <div class="imagem">
           <img src="assets/imgs/tv.jpg" width="300px">
-        </ul>
+        </div>
+        <div class="text">
+          <p>Depois de muito trabalho e exploração, chegou a hora de se recolher para descansar. Porém, sua jornada
+            ainda
+            não acabou! Ao voltar para a cabana, é hora de assistir TV antes de dormir, porque os canais de Stardew
+            Valley
+            oferecem informações valiosas para sua aventura.</p>
+          <br>
 
+          <p style="font-weight: bold;">Guia de Canais:</p>
+          <br>
+          <p><span style="font-weight: bold;">Rainha do molho:</span> Ensina receitas de comida e passa aos domingos com
+            reprises na quarta</p>
+          <p><span style="font-weight: bold;">Cartomante: </span>Mostra sua sorte do dia, muito importante para saber se
+            você terá sorte na mineração, pesca ou encontrando itens raros</p>
+          <p><span style="font-weight: bold;">Previsão do tempo: </span> Diz o clima do dia seguinte, muito útil para
+            planejar o dia seguinte no jogo</p>
+          <p><span style="font-weight: bold;">Vida no campo: </span>Dá dicas importantes sobre agricultura, pesca,
+            eventos e mecânicas escondidas no jogo</p>
+        </div>
+      </div>
 
-        <br>
-        <br>
-        <br>
-        <h3>Dicas de cultivo:</h3>
-        <p>Stardew Valley tem as quatro estações que conhecemos e cada uma dura um período fixo de 28 dias. A mais desafiadora do jogo será o inverno, obviamente.</p>
+      <br>
+      <br>
+      <br>
+      <h3>Dicas de cultivo:</h3>
+      <p>Stardew Valley tem as quatro estações que conhecemos e cada uma dura um período fixo de 28 dias. A mais
+        desafiadora do jogo será o inverno, obviamente.</p>
+      <div class="estacao">
+        <div class="imagem"><img src="assets/imgs/primavera.jpg" width="400px"></div>
+        <div class="text">
           <h4>1ª estação: Primavera 🌸</h4>
-          <img src="assets/imgs/primavera.jpg" width="400px">
-          <p>A primavera é de longe a estação mais bonita e aguardada do jogo, o cenário se enche de flores, o clima fica agradável e é a estação ideal para aprender a cultivar, já que os cultivos dessa estação são mais simples:</p>
-          <p>Nessa estação, as seguintes plantas podem ser cultivadas: Jasmin-azul, couve-flor, alho, couve, chirívia, batata, ruibarbo, tulipa, arroz não moído, cenoura. Além dessas, o grão de café, vagem e morango também podem ser cultivados, esses rendendo colheitas múltiplas.</p>
-          <p>A melhor planta para se ganhar dinheiro nessa primeira primavera é a batata, você pode comprar as sementes do Pierre.</p>
+          <br>
+          <p>A primavera é de longe a estação mais bonita e aguardada do jogo, o cenário se enche de flores, o clima
+            fica
+            agradável e é a estação ideal para aprender a cultivar, já que os cultivos dessa estação são mais simples:
+          </p>
+          <p>Nessa estação, as seguintes plantas podem ser cultivadas: Jasmin-azul, couve-flor, alho, couve, chirívia,
+            batata, ruibarbo, tulipa, arroz não moído, cenoura. Além dessas, o grão de café, vagem e morango também
+            podem
+            ser cultivados, esses rendendo colheitas múltiplas.</p>
+          <p>A melhor planta para se ganhar dinheiro nessa primeira primavera é a batata, você pode comprar as sementes
+            do
+            Pierre.</p>
+          <br>
           <p>
             <img src="assets/imgs/Potato.png" width="50px">
             <img src="assets/imgs/Kale.png" width="50px">
             <img src="assets/imgs/Strawberry.png" width="50px">
           </p>
+        </div>
+      </div>
 
+      <div class="estacao">
+        <div class="text">
           <h4>2ª estação: Verão ☀️</h4>
-          <img src="assets/imgs/verao.jpg" width="400px">
+          <br>
           <p>O verão faz as plantas crescerem rápido e possui menos chuva que a primavera</p>
-          <p>Nessa estação você consegue cultivar: Melão, papoula, rabanete, repolho roxo, carambola, flor-miçanga, trigo e girassol como colheita única. Como colheitas múltiplas temos o mirtilo, milho, lúpulo, pimenta quente, tomate e grão de café</p>
-          <p>A melhor planta para essa estação é o mirtilo, pois produz várias vezes, dando muitos frutos por colheita e rende 80 ouros por fruto</p>
+          <p>Nessa estação você consegue cultivar: Melão, papoula, rabanete, repolho roxo, carambola, flor-miçanga,
+            trigo e
+            girassol como colheita única. Como colheitas múltiplas temos o mirtilo, milho, lúpulo, pimenta quente,
+            tomate e
+            grão de café</p>
+          <p>A melhor planta para essa estação é o mirtilo, pois produz várias vezes, dando muitos frutos por colheita e
+            rende 80 ouros por fruto</p>
+          <br>
           <p>
             <img src="assets/imgs/Blueberry.png" width="50px">
             <img src="assets/imgs/Melon.png" width="50px">
             <img src="assets/imgs/Starfruit.png" width="50px">
           </p>
+        </div>
+        <div class="imagem"><img src="assets/imgs/verao.jpg" width="400px"></div>
+      </div>
 
-          <h4>3ª estação: Outono 🍂</h4>
+      <div class="estacao">
+        <div class="imagem">
           <img src="assets/imgs/outono.jpg" width="400px">
-          <p>No outono, a estética do jogo fica extraordinária de tão linda, além disso é uma das estações mais lucrativas do jogo. O outono tem ainda menos chuvas que o verão, então é importante ter um bom regador nessa altura do jogo.</p>
-          <p>Nessa estação você pode plantar como colheita única: Amaranto, alcachofra, beterraba, couve chinesa, rosa-de-fada, abóbora, girassol, cereja de joia doce, trigo, inhame. Como múltiplas colheitas: Milho, Oxicoco, Berinjela, uva, e brócolis.</p>
-          <p>Melhores plantações do outono sem dúvida:</p>
-          <p><img src="assets/imgs/Pumpkin.png" width="50px">
-          <img src="assets/imgs/Cranberries.png" width="50px">
-          <img src="assets/imgs/Corn.png" width="50px"></p>
+        </div>
+        <div class="text">
+          <p>
+          <h4>3ª estação: Outono 🍂</h4>
+          <br>
 
+          <p>No outono, a estética do jogo fica extraordinária de tão linda, além disso é uma das estações mais
+            lucrativas
+            do jogo. O outono tem ainda menos chuvas que o verão, então é importante ter um bom regador nessa altura do
+            jogo.</p>
+          <p>Nessa estação você pode plantar como colheita única: Amaranto, alcachofra, beterraba, couve chinesa,
+            rosa-de-fada, abóbora, girassol, cereja de joia doce, trigo, inhame. Como múltiplas colheitas: Milho,
+            Oxicoco,
+            Berinjela, uva, e brócolis.</p>
+          <p>Melhores plantações do outono sem dúvida:</p>
+          <br>
+          <p><img src="assets/imgs/Pumpkin.png" width="50px">
+            <img src="assets/imgs/Cranberries.png" width="50px">
+            <img src="assets/imgs/Corn.png" width="50px">
+          </p>
+          </p>
+        </div>
+      </div>
+
+      <div class="estacao">
+        <div class="text">
           <h4>4ª estação: Inverno ❄️</h4>
-          <img src="assets/imgs/inverno.jpg" width="400px">
+
           <h4>Muita atenção</h4>
-          <p>É aqui que o bicho pega!! No inverno, não é possível plantar em área externa devido à baixa temperatura. Então é de extrema importância que a essa altura do jogo você já tenha desbloqueado a estufa, que vai te salvar durante os 28 dias dessa estação! </p>
-          <p>Caso você ainda não tenha desbloqueado a estufa, não se preocupe, você ainda poderá contar com a pescaria para se sustentar durante esse período. Durante esse período a única possível plantação externa é do melão poeiro.</p>
+          <p>É aqui que o bicho pega!! No inverno, não é possível plantar em área externa devido à baixa temperatura.
+            Então
+            é de extrema importância que a essa altura do jogo você já tenha desbloqueado a estufa, que vai te salvar
+            durante os 28 dias dessa estação! </p>
+          <p>Caso você ainda não tenha desbloqueado a estufa, não se preocupe, você ainda poderá contar com a pescaria
+            para
+            se sustentar durante esse período. Durante esse período a única possível plantação externa é do melão
+            poeiro.
+          </p>
           <p>
             <img src="assets/imgs/Powdermelon.png" width="50px">
           </p>
 
 
-          <br>
-          <br>
-          <br>
-          
+        </div>
+        <div class="imagem"><img src="assets/imgs/inverno.jpg" width="400px"></div>
       </div>
 
-    </div>
-  
-    
-  
+      <br>
+      <br>
+      <br>
+      <center>
+         <h3>A Pesca em Stardew Valley</h3>
+         <br>
+      <div class="intro-pesca">
+        <img src="assets/imgs/pesca3.jpg" width="400px">
+        <img src="assets/imgs/pesca.jpg" width="400px">
+      </div>
+      <br>
+      <br>
+      </center>
+      <p>A pesca é uma das melhores maneiras de ganhar dinheiro e também uma das partes mais divertidas do jogo!</p>
+      <p>No começo do jogo pode ser um pouco complicado se acostumar com o controle da barra de pesca, mas logo você se acostuma a isso e estará se divertindo pescando vários peixes pela Vila dos Pelicanos.</p>
+      <p>Uma coisa importante de se saber nesse início de jogo é que a variedade de sua pesca depende da estação, clima, horário e experiência em pesca. Aqui abaixo vai um guia de todos os possíveis lugares de pesca e os peixes que é possível conseguir em cada um.</p>
+     
+      <div class="pesca">
+        <div class="imagem"><img src="assets/imgs/esgoto.jpg" width="300px"></div>
+        <div class="text">
+          <h3>Esgotos</h3>
+          <br>
+          <p>Os Esgotos são um local de pesca fácil e produtivo, especialmente para aprimorar a habilidade de pesca ou
+            adquirir tesouros. A Carpa é o peixe menos difícil de pescar no jogo e é o único peixe nos esgotos (exceto
+            um
+            único peixe lendário, a Carpa mutante). Portanto, todo arremesso de linha resulta em uma recompensa de item
+            imediata ou em uma pesca rápida de carpa.</p>
+          <p style="font-weight: bold;">Peixes mais comuns de se pescar no esgoto:</p>
+          <br>
+          <p><img src="assets/imgs/carpa.png" width="30px"> Carpa</p>
+          <p><img src="assets/imgs/Radioactive_Carp.png" width="30px"> Carpa Radioativa</p>
+        </div>
+      </div>
+      <div class="pesca">
+        <div class="text">
+          <h3>Praia</h3>
+          <br>
+          <p>A praia é o melhor para você começar a ganhar dinheiro de verdade com pesca.
+            Quanto mais longe sua vara alcançar, melhores serão os peixes e a parte da noite (após as 18h) costuma ser mais lucrativa.
+            Fique no píer e lance o mais longe que puder.
+          </p>
+          <p style="font-weight: bold;">Os peixes mais comuns de se pescar na praia:</p>
+          <br>
+          <p><img src="assets/imgs/linguado.png" width="30px"> Linguado</p>
+          <p><img src="assets/imgs/Sardine.png" width="30px"> Sardinha</p>
+          <p><img src="assets/imgs/Tuna.png" width="30px"> Atum</p>
+        </div>
+        <div class="imagem"><img src="assets/imgs/praia.jpg" width="300px" height="225px"></div>
+      </div>
+      <div class="pesca">
+        <div class="imagem">
+          <img src="assets/imgs/riverPelican.jpg" width="300px" height="225px">
+        </div>
+        <div class="text">
+          <h3>Rio(Vila dos Pelicanos)</h3>
+          <br>
+          <p>A pesca costuma ser mais variada e menos previsível.
+            Nos dias de chuva você consegue pescar o bagre, o mais valioso dentre os comuns de se pescar por aqui. 
+            Os lugares mais largos do rio costumam ter os melhores peixes e alguns deles só aparecem em horários específicos.
+          </p>
+          
+          <p style="font-weight: bold;">Os peixes mais comuns de se pescar nesse rio:</p>
+          <br>
+          <p><img src="assets/imgs/Bream.png" width="30px"> Brema</p>
+          <p><img src="assets/imgs/Catfish.png" width="30px"> Bagre (quando chove)</p>
+          <p><img src="assets/imgs/Sunfish.png" width="30px"> Sunfish</p>
+        </div>
+      </div>
+      <div class="pesca">
+        <div class="text">
+          <h3>Lago da montanha</h3>
+          <br>
+          <p>Os peixes aqui são mais calmos e por isso são mais fáceis de pescar, sendo um bom lugar para treinar até se acostumar com a barra de pesca e comandos.
+            No verão e inverno é possível pescar o Esturjão, que é o mais valioso dentre os comuns de se pescar. Um ótimo lugar para ganhar experiência em pesca.
+          </p>
+          <p style="font-weight: bold;">Os peixes mais comuns de se pescar nesse lago:</p>
+          <br>
+          <p><img src="assets/imgs/carpa.png" width="30px"> Carpa</p>
+          <p><img src="assets/imgs/achiga.png" width="30px"> Achigã</p>
+          <p><img src="assets/imgs/Sturgeon.png" width="30px"> Esturjão</p>
+        </div>
+        <div class="imagem">
+          <img src="assets/imgs/Lago da Montanha.jpg" width="300px" height="225px">
+        </div>
+      </div>
+      <div class="pesca">
+        <div class="imagem">
+          <img src="assets/imgs/LagodaFazenda.jpg" width="300px" height="225px">
+        </div>
+        <div class="text">
+          <h3>Lago da fazenda</h3>
+          <br>
+          <p>Pescar no lago da fazenda serve mais para treino do que para lucro, isso devido a enorme quantidade de lixo que se pega pescando aqui e a pouquíssima quantidade de peixes bons.</p>
+          <p style="font-weight: bold;">Os peixes mais comuns de se pescar:</p>
+          <br>
+          <p><img src="assets/imgs/carpa.png" width="30px"> Carpa</p>
+          <p><img src="assets/imgs/lixo.png" width="30px"> Lixo😅</p>
+        </div>
+      </div>
+      <div class="pesca">
+
+        <div class="text">
+          <h3>Minas</h3>
+          <br>
+          <p>Quando conseguir pescar nas minas, você já estará em nível mais avançado e com mais experiência em pesca, isso porque a pesca só é desbloqueada nos últimos andares das minas.
+            A barrinha é mais difícil de controlar, os peixes são mais rápidos e você conseguirá peixes raros com mais facilidade.
+          </p>
+          <p style="font-weight: bold;">Os peixes mais comuns de se pescar:</p>
+          <br>
+          <p><img src="assets/imgs/Ghostfish.png" width="30px"> Peixe fantasma</p>
+          <p><img src="assets/imgs/Lava_Eel.png" width="30px"> Enguia de lava</p>
+        </div>
+        <div class="imagem">
+          <img src="assets/imgs/mina.jpg" width="300px" height="225px">
+        </div>
+      </div>
+      <div class="pesca">
+        <div class="imagem">
+          <img src="assets/imgs/Deserto.jpg" width="300px" height="225px">
+        </div>
+        <div class="text">
+          <h3>Deserto</h3>
+          <br>
+          <p>No deserto há poucos tipos de peixes e você consegue pescar em horários específicos. Você consegue o areinha que é importante para completar o Centro Comunitário.</p>
+          <p style="font-weight: bold;">Os peixes mais comuns de se pescar:</p>
+          <br>
+          <p><img src="assets/imgs/Sandfish.png" width="30px"> Areinha</p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <center>
+        <h3>Pecuária em Stardew Valley</h3>
+        <br>
+        <br>
+          <div class="intro-pecuaria">
+            
+            <img src="assets/imgs/Celeiro.png" width="300px">
+            <img src="assets/imgs/Galinheiro.png" width="300px">
+          </div>
+      </center>
+      <br>
+      <p>A pecuária é uma das melhores formas de conseguir dinheiro no jogo. Para começar você vai precisar construir um galinheiro e um celeiro com a Robin</p>
+      <p style="font-weight: bold;">No galinheiro é possível criar:</p>
+      <div class="intro-pecuaria">
+        <p><img src="assets/imgs/White_Chicken.png"> Galinhas</p>
+        <p><img src="assets/imgs/Duck.png"> Patos</p>
+        <p><img src="assets/imgs/Rabbit.png"> Coelhos</p>
+      </div>
+      <p style="font-weight: bold;">No celeiro é possível criar:</p>
+      <div class="intro-pecuaria">
+        <p><img src="assets/imgs/White_Cow.png"> Vacas</p>
+        <p><img src="assets/imgs/Goat.png"> Cabras</p>
+        <p><img src="assets/imgs/Sheep.png"> Ovelhas</p>
+        <p><img src="assets/imgs/Pig.png"> Porcos</p>
+      </div>
+      
+      <p>Os animais vão te fornecer diversos recursos que você pode vender, usar para fazer receitas, roupas e diversos outros utensílios</p>
+      <p><img src="assets/imgs/32px-Egg.png" width="35px"> Ovos: Você obtém com as galinhas</p>
+      <p><img src="assets/imgs/36px-Duck_Egg.png" width="35px"> Ovos de pata: consegue criando patos</p>
+      <p><img src="assets/imgs/36px-Duck_Feather.png" width="35px"> Penas de pato: consegue com patos e é ótimo para dar de presente e criar roupas.</p>
+      <p><img src="assets/imgs/32px-Wool.png" width="35px"> Lã: consegue com as ovelhas</p>
+      <p><img src="assets/imgs/32px-Rabbit's_Foot.png" width="35px"> Pé de coelho: Excelente para dar de presente de aniversário para os aldeões, que acreditam ser um amuleto da sorte.</p>
+      <p><img src="assets/imgs/32px-Milk_ES.png" width="35px"> Leite: consegue com as vacas</p>
+      <p><img src="assets/imgs/32px-Goat_Milk_ES.png" width="35px"> Leite de cabra: consegue com as cabras</p>
+      <p><img src="assets/imgs/32px-Truffle.png" width="35px"> Trufas: os porcos conseguem fuçando o solo, muito lucrativo</p>          
+      <p>É muito importante dar carinho e comida aos animais todos os dias, isso porque eles ficam felizes e isso aumenta a qualidade dos recursos fornecidos, impactando diretamente no lucro. Outra dica importante para manter os animais sempre felizes é comprar um aquecedor para o inverno e manter nos ambientes deles</p>
+
+      <br><br><br>
+
+      <center>
+        <h3>Exploração das minas em Stardew Valley</h3>
+        <br>
+        <br>
+          <div class="intro-pecuaria">
+            
+            <img src="assets/imgs/minas.jpg" width="300px">
+            <img src="assets/imgs/minas1.jpg" width="300px">
+          </div>
+      </center>
+      <p>As minas são uma parte essencial do jogo, pois aqui você vai adquirir experiência matando montros, além de adquirir recursos essenciais para o jogo</p>
+      <p style="font-weight: bold;">Dicas importantes:</p>
+      <br>
+      <p>No início do jogo seu level e energia estarão baixos, além de que suas ferramentas não serão as melhores, o que pode acabar te trazendo infortúnios como ser derrotado facilmente nas cavernas, então tenha cuidado.</p>
+      <p>Leve frutas, peixe e comida cozida quando tiver, para recuperar energia.</p>
+      <br>
+      <p style="font-weight: bold;">Guia dos andares</p>
+      <br>
+      <p>Andares 1-39: Abundante em cobre </p>
+      <p>Andares 40-79: Abundante em ferro</p>
+      <p>Andares 80+: Abundante em ouro</p>
+      <p>Outros minérios como írio você só vai encontrar na caverna do deserto, que possui uma dificuldade mais elevada.</p>
+      <br>
+
     <div class="footer">
     </div>
-  </body>
+</body>
 
 </html>
