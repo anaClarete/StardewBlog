@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-image: url('../assets/imgs/stardew1.png');
   background-size: cover;
   background-position: center;
@@ -19,17 +19,17 @@ body{
   font-weight: normal;
   height: 10vh;
   width: 100%;
-  text-shadow: 
+  text-shadow:
     2px 2px 0 #8b5a2b,
     4px 4px 0 #5a3a1a;
 }
 
-.header .container{
-    display: flex;
-    justify-content: space-between;
+.header .container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.titulo{
+.titulo {
   font-size: 80px;
   font-family: 'Stardew';
   display: flex;
@@ -39,7 +39,7 @@ body{
   padding-left: 40px;
 }
 
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -47,61 +47,69 @@ body{
   gap: 20px;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
-.login .container{
-    background-color: rgba(204, 255, 255, 0.5);
-    color: black;
-    text-shadow: none;
-    margin-top: 60px;
-    width: 30vw;
-    height: fit-content;
-    padding: 15px;
-    border-radius: 20%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.login .container h2{
-    margin-bottom: 35px;
+.login .container {
+  background-color: rgba(204, 255, 255, 0.5);
+  color: black;
+  text-shadow: none;
+  margin-top: 60px;
+  width: 30vw;
+  height: 45vh;
+  padding: 15px;
+  border-radius: 20%;
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
 }
 
-.campo{
-    margin-top: 20px;
+.login .container h2 {
+  display: flex;
+  justify-content: center;
 }
 
-.campo input{
-    width: 180px;
-    height: 25px;
-    border: none;
-    border-radius: 10px;
-    margin-left: 20px;
+.login .container .botao_centraliza {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.botao{
-    width: 100px;
-    height: 35px;
-    font-family: 'stardew';
-    font-size: 20px;
-    margin-top: 30px; 
-    background-color: rgba(204, 255, 255, 0.7);
-    border-color: aquamarine;
-    border-radius: 10px;
+.campo {
+  margin-top: 20px;
 }
 
-.card-login{
-
+.campo input {
+  width: 180px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 20px;
 }
+
+.botao {
+  width: 100px;
+  height: 35px;
+  font-family: 'stardew';
+  font-size: 20px;
+  background-color: rgba(204, 255, 255, 0.7);
+  border-color: aquamarine;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.card-login {}
 
 @font-face {
   font-family: 'Stardew';
@@ -114,9 +122,28 @@ a{
 }
 
 
-.footer{
+.footer {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin-bottom: 70px;
   color: yellow;
 }
+
+.loading_div {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_div img {
+  width: 100%;
+  height: 100%;
+
+}
+
+ #div_erros_login{
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  display: none;
+} 

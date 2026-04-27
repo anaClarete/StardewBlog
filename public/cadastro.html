@@ -21,63 +21,58 @@
     <div class="container">
       <h1 class="titulo">Stardew Blog</h1>
       <div class="navbar">
-          <a href="index.html">Inicial</a>
-          <a href="simulador.html">Simulador</a>
-          <a href="login.html">Login</a>
-          <a href="#">Cadastro</a>
+        <a href="index.html">Inicial</a>
+        <a href="simulador.html">Simulador</a>
+        <a href="login.html">Login</a>
+        <a href="#">Cadastro</a>
       </div>
     </div>
-  <!--header fim-->
+    <!--header fim-->
 
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
-      </div>
-    </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
+    <div class="login">
+      <!-- <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          
+        </div> 
+      </div> -->
+      <div class="container">
+        <div class="card card-cadastro">
+          <h2>Bem-vindo!</h2>
+          <div class="formulario">
+            <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
+            <div class="campo">
+              <span>Nome:</span>
+              <input id="nome_input" type="text" placeholder="Seu nome" />
+            </div>
+            <div class="campo">
+              <span>E-mail:</span>
+              <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            </div>
+            <div class="campo">
+              <span>Senha:</span>
+              <input id="senha_input" type="password" placeholder="******" />
+            </div>
+            <div class="campo">
+              <span>Confirmacao da Senha:</span>
+              <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            </div>
+            <div class="botao_centraliza">
+            <button class="botao" onclick="cadastrar()">Cadastrar</button>
+            <div id="div_erros_login">
+              <div id="mensagem_erro"></div>
+            </div>
           </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+          <div id="div_aguardar" class="loading-div" style="display:none; justify-content:center;">
+            <img src="./assets/imgs/loading.gif" id="loading-gif" width="100px">
           </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmacao da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
-        </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
-        </div>
 
-        <div id="div_erros_login"></div>
+          
+        </div>
       </div>
     </div>
-  </div>
-
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
-    </div>
-  </div>
-  <!--footer fim-->
 </body>
 
 </html>
@@ -104,9 +99,9 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-      cardErro.style.display = "block";
+      div_erros_login.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "<p>(Mensagem de erro para todos os campos em branco)</p>";
 
       finalizarAguardar();
       return false;
@@ -159,6 +154,6 @@
 
   // Listando empresas cadastradas 
   function sumirMensagem() {
-    cardErro.style.display = "none";
+    div_erros_login.style.display = "none";
   }
 </script>

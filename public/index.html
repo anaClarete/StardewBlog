@@ -212,12 +212,15 @@
           <p>A melhor planta para se ganhar dinheiro nessa primeira primavera é a batata, você pode comprar as sementes
             do
             Pierre.</p>
+            <p>Quais os melhores cultivos da primavera?<button onclick="mostrarPlantiosPrimavera()">Descobrir</button></p>
+            <br>
+            
           <br>
-          <p>
-            <img src="assets/imgs/Potato.png" width="50px">
+          <div id="div_primavera">
+            <!-- <img src="assets/imgs/Potato.png" width="50px">
             <img src="assets/imgs/Kale.png" width="50px">
-            <img src="assets/imgs/Strawberry.png" width="50px">
-          </p>
+            <img src="assets/imgs/Strawberry.png" width="50px"> -->
+          </div>
         </div>
       </div>
 
@@ -233,12 +236,14 @@
             grão de café</p>
           <p>A melhor planta para essa estação é o mirtilo, pois produz várias vezes, dando muitos frutos por colheita e
             rende 80 ouros por fruto</p>
+            <p>Quais os melhores cultivos do verão?<button onclick="mostrarPlantiosVerao()">Descobrir</button></p>
+            <br>
           <br>
-          <p>
-            <img src="assets/imgs/Blueberry.png" width="50px">
+          <div id="div_verao">
+            <!-- <img src="assets/imgs/Blueberry.png" width="50px">
             <img src="assets/imgs/Melon.png" width="50px">
-            <img src="assets/imgs/Starfruit.png" width="50px">
-          </p>
+            <img src="assets/imgs/Starfruit.png" width="50px"> -->
+          </div>
         </div>
         <div class="imagem"><img src="assets/imgs/verao.jpg" width="400px"></div>
       </div>
@@ -260,13 +265,13 @@
             rosa-de-fada, abóbora, girassol, cereja de joia doce, trigo, inhame. Como múltiplas colheitas: Milho,
             Oxicoco,
             Berinjela, uva, e brócolis.</p>
-          <p>Melhores plantações do outono sem dúvida:</p>
+          <p>Melhores plantações do outono sem dúvida: <button onclick="mostrarPlantiosOutono()">Descobrir</button></p>
           <br>
-          <p><img src="assets/imgs/Pumpkin.png" width="50px">
+          <div id="div_outono">
+            <!-- <img src="assets/imgs/Pumpkin.png" width="50px">
             <img src="assets/imgs/Cranberries.png" width="50px">
-            <img src="assets/imgs/Corn.png" width="50px">
-          </p>
-          </p>
+            <img src="assets/imgs/Corn.png" width="50px"> -->
+          </div>
         </div>
       </div>
 
@@ -491,5 +496,62 @@
     <div class="footer">
     </div>
 </body>
+<script>
+  function mostrarPlantiosPrimavera(){
 
+    div_primavera.innerHTML = "<br><br><br>";
+
+    let primavera = [
+      {nome: 'Jasmin-Azul', preco: '30 ouros', imagem : 'assets/imgs/Jasmin.png'},
+      {nome: 'Couve-flor', preco: '80 ouros', imagem : 'assets/imgs/Couve.png'},
+      {nome: 'Alho', preco: '40 ouros', imagem : 'assets/imgs/Alho.png'},
+      {nome: 'Couve', preco: '70 ouros', imagem : 'assets/imgs/Kale.png'},
+      {nome: 'Chirívia', preco: '20 ouros', imagem : 'assets/imgs/Chirivia.png'},
+      {nome: 'Batata', preco: '50 ouros', imagem : 'assets/imgs/Potato.png'},
+      {nome: 'Ruibarbo', preco: '100 ouros', imagem : 'assets/imgs/Ruibarbo.png'},
+      {nome: 'Morango', preco: '100 ouros', imagem : 'assets/imgs/Morango.png'}
+    ];
+
+    for(let i = 0; i < primavera.length; i++){
+      div_primavera.innerHTML += ` <li><img src="${primavera[i].imagem}" width = "40px"> ${primavera[i].nome} - ${primavera[i].preco}</li>`
+    }
+  }
+
+  function mostrarPlantiosVerao(){
+    div_verao.innerHTML = "<br><br><br>";
+
+    let verao = [
+      {nome: 'Melão', preco: '80 ouros', imagem : 'assets/imgs/Melao.png'},
+      {nome: 'Papoula', preco: '100 ouros', imagem : 'assets/imgs/Papoula.png'},
+      {nome: 'Rabanete', preco: '40 ouros', imagem : 'assets/imgs/Rabanete.png'},
+      {nome: 'Repolho roxo', preco: '100 ouros', imagem : 'assets/imgs/Repolho.png'},
+      {nome: 'Carambola', preco: '400 ouros', imagem : 'assets/imgs/Carambola.png'},
+      {nome: 'Girassol', preco: '30 ouros', imagem : 'assets/imgs/Girassol.png'},
+      {nome: 'Mirtilo', preco: '80 ouros', imagem : 'assets/imgs/Mirtilo.png'},
+      {nome: 'Milho', preco: '150 ouros', imagem : 'assets/imgs/Milho.png'}
+    ];
+
+    for(let i = 0; i < verao.length; i++){
+      div_verao.innerHTML += ` <li><img src="${verao[i].imagem}" width = "40px"> ${verao[i].nome} - ${verao[i].preco}</li>`
+    }
+  }
+
+  function mostrarPlantiosOutono(){
+    div_outono.innerHTML = "<br><br><br>";
+
+    let outono = [
+      {nome: 'Amaranto', preco: '70 ouros', imagem : 'assets/imgs/Amaranto.png'},
+      {nome: 'Alcachofra', preco: '30 ouros', imagem : 'assets/imgs/Alcachofra.png'},
+      {nome: 'Beterraba', preco: '20 ouros', imagem : 'assets/imgs/Beterraba.png'},
+      {nome: 'Abobora', preco: '100 ouros', imagem : 'assets/imgs/Abobora.png'},
+      {nome: 'Oxicoco', preco: '240 ouros', imagem : 'assets/imgs/Oxicoco.png'},
+      {nome: 'Berinjela', preco: '20 ouros', imagem : 'assets/imgs/Berinjela.png'},
+      {nome: 'Uva', preco: '60 ouros', imagem : 'assets/imgs/Uva.png'}
+    ];
+
+    for(let i = 0; i < outono.length; i++){
+      div_outono.innerHTML += ` <li><img src="${outono[i].imagem}" width = "40px"> ${outono[i].nome} - ${outono[i].preco}</li>`
+    }
+  }
+</script>
 </html>

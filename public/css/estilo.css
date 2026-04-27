@@ -122,3 +122,39 @@ a{
   text-decoration: none;
   color: inherit;
 }
+
+#div_primavera{
+  display: flex;
+  gap: 20px;
+}
+
+#div_primavera li{
+  list-style: none;
+}
+
+#div_verao{
+  display: flex;
+  gap: 20px;
+}
+
+#div_verao li{
+  list-style: none;
+}
+
+#div_outono{
+  display: flex;
+  gap: 20px;
+}
+
+#div_outono li{
+  list-style: none;
+}
+
+.conteudo button{
+  background-color: rgba(204, 255, 255, 0.8);
+  border: none;
+  margin-left: 20px;
+  font-family: 'stardew', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
