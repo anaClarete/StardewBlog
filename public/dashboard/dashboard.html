@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>StardewBlog | Dashboards</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
+    <!-- <link rel="stylesheet" href="./../css/estilo.css" /> -->
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -31,47 +31,83 @@
 <body>
 
     <div class="janela">
-        <div class="header-left">
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
+        <div class="header">
+            <img src="../assets/imgs/Brown_Chicken.png">
+            <h1>Stardew Blog: Painel de Controle da Fazenda</h1>
+        </div>
+        <!-- <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
+            </div> -->
+    </div>
+    <div class="cards">
+        <div class="first-card">
+            <div class="imagem"><img src="../assets/imgs/fazendeiro.png" alt=""></div>
+            <div class="texto">
+                <p>Fazenda Sol Nascente</p>
+                <p>Primavera, Dia 14</p>
+                <p style="color: yellow;">Ouro: 45,200g</p>
+                <p>Cultivo: Lvl 8</p>
+                <p>Mineração Lvl 6</p>
             </div>
+            <div class="money">
+                <div class="imagem">
+                    <img src="../assets/imgs/moedinha.png" width="50px">
+
+                </div>
+                <div class="texto">
+                    <p>Lucro cultivo estimado</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagem">
+                <img src="../assets/imgs/flash.png" width="60px">
+            </div>
+            <div class="texto">
+                <p>Energia</p>
+            </div>
+            <div class="barra-progresso">
+                <div class="barra-energia" style="width: 70%;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagem">
+                <img src="../assets/imgs/mineracao.png" width="50px">
+            </div>
+            <div class="texto">
+                <p>Mineração</p>
+            </div>
+            <div class="barra-progresso">
+                <div class="barra-mineracao" style="width: 70%;"></div>
+            </div>
+        </div>
+        <div class="card-especial">
+            <h3>Filtros e Entradas</h3>
+            <p>Estacao atual:</p>
+            <select id="cultivo">
+                <option value="primavera">Primavera</option>
+                <option value="primavera">Verão</option>
+                <option value="primavera">Inverno</option>
+                <option value="primavera">Outono</option>
+            </select>
+
+            <p>Dia do Mes: 14</p>
+            <input type="range" id="range-tempo" min="0" max="100" step="1" value="70">
 
         </div>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
+    </div>
 
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div id="graficos">
-            </div>
+    <div class="dash">
+        <div id="alerta">
         </div>
+
+        <div class="btns-dash" id="btnAquario">
+            <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+        </div>
+        <div id="graficos">
+        </div>
+    </div>
     </div>
 
 
