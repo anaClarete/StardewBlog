@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/download.jpg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,72 +31,148 @@
 <body>
 
     <div class="janela">
-        <div class="header">
-            <img src="../assets/imgs/Brown_Chicken.png">
-            <h1>Stardew Blog: Painel de Controle da Fazenda</h1>
+        <div class="header-left">
+            <img src="../assets/imgs/centro.png" width="150px">
+            <h1>Centro Comunitario</h1>
+            <p><img src="../assets/imgs/home.png" width="30px" style="margin-right: 15px;">Visão geral</p>
+            <p><img src="../assets/imgs/cesta.png" width="60px">Despensa</p>
+            <p><img src="../assets/imgs/Tuna.png" width="30px" style="margin-right: 15px;">Aquário</p>
+            <p><img src="../assets/imgs/marreta.png" width="30px" style="margin-right: 15px;">Sala de Artesanato</p>
+            <p><img src="../assets/imgs/quadro-avisos.png" width="30px" style="margin-right: 15px;">Quadro de avisos</p>
+            <p><img src="../assets/imgs/star.png" width="30px" style="margin-right: 15px;">Cofre</p>
         </div>
         <!-- <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div> -->
     </div>
     <div class="cards">
-        <div class="first-card">
-            <div class="imagem"><img src="../assets/imgs/fazendeiro.png" alt=""></div>
-            <div class="texto">
-                <p>Fazenda Sol Nascente</p>
-                <p>Primavera, Dia 14</p>
-                <p style="color: yellow;">Ouro: 45,200g</p>
-                <p>Cultivo: Lvl 8</p>
-                <p>Mineração Lvl 6</p>
-            </div>
-            <div class="money">
-                <div class="imagem">
-                    <img src="../assets/imgs/moedinha.png" width="50px">
+        <div class="progresso-geral">
+            <div class="bloco-barra">
+                <h1>Progresso Geral</h1>
+                <div class="barra-progresso">
+                    <div class="barra">
+                        <div class="progresso"></div>
+                    </div>
+                    <div class="porcentagem">
+                        <h1>45%</h1>
+                    </div>
 
                 </div>
-                <div class="texto">
-                    <p>Lucro cultivo estimado</p>
+
+                <p>15/33 pacotes completos</p>
+            </div>
+            <div class="info">
+
+                <div class="card-recompensa">
+                    <div class="title">RECOMPENSA</div>
+                    <div class="conteudo">
+                        <img src="../assets/imgs/recompensa-despensa.png" width="100px">
+                        <p>Sementes de estação (30unidades)</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="imagem">
-                <img src="../assets/imgs/flash.png" width="60px">
-            </div>
-            <div class="texto">
-                <p>Energia</p>
-            </div>
-            <div class="barra-progresso">
-                <div class="barra-energia" style="width: 70%;"></div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="imagem">
-                <img src="../assets/imgs/mineracao.png" width="50px">
-            </div>
-            <div class="texto">
-                <p>Mineração</p>
-            </div>
-            <div class="barra-progresso">
-                <div class="barra-mineracao" style="width: 70%;"></div>
-            </div>
-        </div>
-        <div class="card-especial">
-            <h3>Filtros e Entradas</h3>
-            <p>Estacao atual:</p>
-            <select id="cultivo">
-                <option value="primavera">Primavera</option>
-                <option value="primavera">Verão</option>
-                <option value="primavera">Inverno</option>
-                <option value="primavera">Outono</option>
-            </select>
-
-            <p>Dia do Mes: 14</p>
-            <input type="range" id="range-tempo" min="0" max="100" step="1" value="70">
 
         </div>
+        <div class="div-salas">
+            <h3>SALAS DO CENTRO COMUNITÁRIO</h3>
+            <div class="salas">
+                <div class="sala">
+                    <h4>DESPENSA</h4>
+                    <img src="../assets/imgs/cesta.png" width="150px">
+                    <div class="barra-progresso-cards">
+                        <div class="barra-card">
+                            <div class="progresso-card"></div>
+                        </div>
+                        <h4>60%</h4>
+                    </div>
+                    <p>3 / 5 pacotes</p>
+                </div>
+                <div class="sala">
+                    <h4>AQUÁRIO</h4>
+                    <img src="../assets/imgs/Tuna.png" width="60px" style="margin: 20px auto;">
+                    <div class="barra-progresso-cards">
+                        <div class="barra-card">
+                            <div class="progresso-card" style="background-color: #4da6ff;"></div>
+                        </div>
+                        <h4>33%</h4>
+                    </div>
+                    <p>2 / 6 pacotes</p>
+                </div>
+                <div class="sala">
+                    <h4>SALA DE ARTESANATO</h4>
+                    <img src="../assets/imgs/Wine.png" width="65px" style="margin: 20px auto;">
+                    <div class="barra-progresso-cards">
+                        <div class="barra-card">
+                            <div class="progresso-card" style="background-color: #9966ff;"></div>
+                        </div>
+                        <h4>40%</h4>
+                    </div>
+                    <p>2 / 5 pacotes</p>
+                </div>
+                <div class="sala">
+                    <h4>QUADRO DE AVISOS</h4>
+                    <img src="../assets/imgs/quadro-avisos.png" width="75px">
+                    <div class="barra-progresso-cards">
+                        <div class="barra-card">
+                            <div class="progresso-card" style="background-color: #ffb366;"></div>
+                        </div>
+                        <h4>50%</h4>
+                    </div>
+                    <p>2 / 4 pacotes</p>
+                </div>
+                <div class="sala">
+                    <h4>COFRE</h4>
+                    <img src="../assets/imgs/star.png" width="75px">
+                    <div class="barra-progresso-cards">
+                        <div class="barra-card">
+                            <div class="progresso-card" style="background-color: #ffff80;"></div>
+                        </div>
+                        <h4>0%</h4>
+                    </div>
+                    <p>0 / 3 pacotes</p>
+                </div>
+            </div>
 
+        </div>
+        <div class="pacotes-por-sala">
+            <h3>PACOTES DA DESPENSA</h3>
+            <div class="pacotes">
+                <div class="pacote">
+                    <h4>PACOTE DE PRIMAVERA <img src="../assets/imgs/primavera.png"></h4>
+                    <div class="status"></div>
+                    <p><img src="../assets/imgs/narciso.png" width="30px"> Narciso</p>
+                    <p><img src="../assets/imgs/primavera.png" width="30px"> Dente-de-leão</p>
+                    <p><img src="../assets/imgs/alhoporo.png" width="30px"> Alho-poró</p>
+                    <p><img src="../assets/imgs/cebolinha.png" width="30px"> Cebolinha</p>
+                </div>
+                <div class="pacote">
+                    <h4>PACOTE DE VERÃO <img src="../assets/imgs/Verao.png"></h4>
+                    <div class="status"></div>
+                    <p><img src="../assets/imgs/Uva.png" width="30px">  Uva</p>
+                    <p><img src="../assets/imgs/Spice_Berry.png" width="30px">  Café de jardim</p>
+                    <p><img src="../assets/imgs/ervilhacheiro.png" width="30px"> Ervilha de cheiro</p>
+                </div>
+                <div class="pacote">
+                    <h4>PACOTE DE OUTONO <img src="../assets/imgs/Outono.png"></h4>
+                    <div class="status"></div>
+                    <p><img src="../assets/imgs/cogumelo.png" width="30px">  Cogumelo</p>
+                    <p><img src="../assets/imgs/ameixaselvagem.png" width="30px">  Ameixa selvagem</p>
+                    <p><img src="../assets/imgs/Outono.png" width="30px"> Avelã</p>
+                    <p><img src="../assets/imgs/amora.png" width="30px"> Amora</p>
+                </div>
+                <div class="pacote">
+                    <h4>PACOTE DE VERÃO <img src="../assets/imgs/Inverno.png"></h4>
+                    <div class="status"></div>
+                    <p><img src="../assets/imgs/raizInverno.png" width="30px">  Raíz de inverno</p>
+                    <p><img src="../assets/imgs/Frutacristal.png" width="30px">  Fruta Cristal</p>
+                    <p><img src="../assets/imgs/Inverno.png" width="30px"> Inhame da neve</p>
+                    <p><img src="../assets/imgs/acafrao.png" width="30px"> Açafrão</p>
+                </div>
+            </div>
+
+        </div>
     </div>
+
 
     <div class="dash">
         <div id="alerta">
