@@ -137,26 +137,32 @@
         <div id="pacotes-por-sala">
             
         </div>
-    </div>
-
-
-    <div class="dash">
+        <div class="dash">
         <div id="alerta">
         </div>
 
-        <div class="btns-dash" id="btnAquario">
+        <!-- <div class="btns-dash" id="btnAquario">
             <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-        </div>
+        <!-- </div>  -->
         <div id="graficos">
-            
+            <div class="grafico1">
+                <canvas id="grafico_barras"></canvas>
+            </div>
+            <div class="grafico2">
+                <canvas id="grafico_donut"></canvas>
+            </div>
         </div>
     </div>
+    </div>
+
+
+    
     </div>
 
 
 </body>
     <script>
-        const conteudos = {
+        const conteudos_pacotes = {
             despensa: `
                  <h3>PACOTES DA DESPENSA</h3>
                 <div class="pacotes">
@@ -337,10 +343,48 @@
                 areaPacotes.style.display = 'none';
             }else{
                 areaPacotes.style.display = 'block';
-                areaPacotes.innerHTML = conteudos[sala];
+                areaPacotes.innerHTML = conteudos_pacotes[sala];
             }
             
         }
+    </script>
+    <script>
+        const grafico1 = document.getElementById('grafico_barras');
+
+        new Chart(grafico1, {
+            type: 'bar',
+            data: {
+                labels: ['Despensa', 'Aquário', 'Sala de Artesanato', 'Quadro de Avisos', 'Cofre'],
+                datasets: [{
+                    data: [100,100,100,100,100],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y:{
+                        beginAtZero: true
+                    }
+                }
+            }
+        })
+
+        const grafico2 = document.getElementById('grafico_donut');
+
+        new Chart(grafico2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Despensa', 'Aquário', 'Sala de Artesanato', 'Quadro de Avisos', 'Cofre'],
+                datasets: [{
+                    data: [20,20,15,25,20],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio:false,
+            }
+        })
     </script>
 </html>
 
