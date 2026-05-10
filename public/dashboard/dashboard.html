@@ -34,12 +34,12 @@
         <div class="header-left">
             <img src="../assets/imgs/centro.png" width="150px">
             <h1>Centro Comunitario</h1>
-            <p><img src="../assets/imgs/home.png" width="30px" style="margin-right: 15px;">Visão geral</p>
-            <p><img src="../assets/imgs/cesta.png" width="60px">Despensa</p>
-            <p><img src="../assets/imgs/Tuna.png" width="30px" style="margin-right: 15px;">Aquário</p>
-            <p><img src="../assets/imgs/marreta.png" width="30px" style="margin-right: 15px;">Sala de Artesanato</p>
-            <p><img src="../assets/imgs/quadro-avisos.png" width="30px" style="margin-right: 15px;">Quadro de avisos</p>
-            <p><img src="../assets/imgs/star.png" width="30px" style="margin-right: 15px;">Cofre</p>
+            <p onclick="trocarConteudo('visaoGeral')"><img src="../assets/imgs/home.png" width="30px" style="margin-right: 15px;">Visão geral</p>
+            <p onclick="trocarConteudo('despensa')"><img src="../assets/imgs/cesta.png" width="60px">Despensa</p>
+            <p onclick="trocarConteudo('aquario')"><img src="../assets/imgs/Tuna.png" width="30px" style="margin-right: 15px;">Aquário</p>
+            <p onclick="trocarConteudo('artesanato')"><img src="../assets/imgs/marreta.png" width="30px" style="margin-right: 15px;">Sala de Artesanato</p>
+            <p onclick="trocarConteudo('quadro')"><img src="../assets/imgs/quadro-avisos.png" width="30px" style="margin-right: 15px;">Quadro de avisos</p>
+            <p onclick="trocarConteudo('cofre')"><img src="../assets/imgs/star.png" width="30px" style="margin-right: 15px;">Cofre</p>
         </div>
         <!-- <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -134,42 +134,8 @@
             </div>
 
         </div>
-        <div class="pacotes-por-sala">
-            <h3>PACOTES DA DESPENSA</h3>
-            <div class="pacotes">
-                <div class="pacote">
-                    <h4>PACOTE DE PRIMAVERA <img src="../assets/imgs/primavera.png"></h4>
-                    <div class="status"></div>
-                    <p><img src="../assets/imgs/narciso.png" width="30px"> Narciso</p>
-                    <p><img src="../assets/imgs/primavera.png" width="30px"> Dente-de-leão</p>
-                    <p><img src="../assets/imgs/alhoporo.png" width="30px"> Alho-poró</p>
-                    <p><img src="../assets/imgs/cebolinha.png" width="30px"> Cebolinha</p>
-                </div>
-                <div class="pacote">
-                    <h4>PACOTE DE VERÃO <img src="../assets/imgs/Verao.png"></h4>
-                    <div class="status"></div>
-                    <p><img src="../assets/imgs/Uva.png" width="30px">  Uva</p>
-                    <p><img src="../assets/imgs/Spice_Berry.png" width="30px">  Café de jardim</p>
-                    <p><img src="../assets/imgs/ervilhacheiro.png" width="30px"> Ervilha de cheiro</p>
-                </div>
-                <div class="pacote">
-                    <h4>PACOTE DE OUTONO <img src="../assets/imgs/Outono.png"></h4>
-                    <div class="status"></div>
-                    <p><img src="../assets/imgs/cogumelo.png" width="30px">  Cogumelo</p>
-                    <p><img src="../assets/imgs/ameixaselvagem.png" width="30px">  Ameixa selvagem</p>
-                    <p><img src="../assets/imgs/Outono.png" width="30px"> Avelã</p>
-                    <p><img src="../assets/imgs/amora.png" width="30px"> Amora</p>
-                </div>
-                <div class="pacote">
-                    <h4>PACOTE DE VERÃO <img src="../assets/imgs/Inverno.png"></h4>
-                    <div class="status"></div>
-                    <p><img src="../assets/imgs/raizInverno.png" width="30px">  Raíz de inverno</p>
-                    <p><img src="../assets/imgs/Frutacristal.png" width="30px">  Fruta Cristal</p>
-                    <p><img src="../assets/imgs/Inverno.png" width="30px"> Inhame da neve</p>
-                    <p><img src="../assets/imgs/acafrao.png" width="30px"> Açafrão</p>
-                </div>
-            </div>
-
+        <div id="pacotes-por-sala">
+            
         </div>
     </div>
 
@@ -182,13 +148,200 @@
             <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
         </div>
         <div id="graficos">
+            
         </div>
     </div>
     </div>
 
 
 </body>
+    <script>
+        const conteudos = {
+            despensa: `
+                 <h3>PACOTES DA DESPENSA</h3>
+                <div class="pacotes">
+                    <div class="pacote">
+                        <h4>PACOTE DE PRIMAVERA <img src="../assets/imgs/primavera.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/narciso.png" width="30px"> Narciso</p>
+                        <p><img src="../assets/imgs/primavera.png" width="30px"> Dente-de-leão</p>
+                        <p><img src="../assets/imgs/alhoporo.png" width="30px"> Alho-poró</p>
+                        <p><img src="../assets/imgs/cebolinha.png" width="30px"> Cebolinha</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>PACOTE DE VERÃO <img src="../assets/imgs/Verao.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/Uva.png" width="30px">  Uva</p>
+                        <p><img src="../assets/imgs/Spice_Berry.png" width="30px">  Café de jardim</p>
+                        <p><img src="../assets/imgs/ervilhacheiro.png" width="30px"> Ervilha de cheiro</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>PACOTE DE OUTONO <img src="../assets/imgs/Outono.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/cogumelo.png" width="30px">  Cogumelo</p>
+                        <p><img src="../assets/imgs/ameixaselvagem.png" width="30px">  Ameixa selvagem</p>
+                        <p><img src="../assets/imgs/Outono.png" width="30px"> Avelã</p>
+                        <p><img src="../assets/imgs/amora.png" width="30px"> Amora</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>PACOTE DE VERÃO <img src="../assets/imgs/Inverno.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/raizInverno.png" width="30px">  Raíz de inverno</p>
+                        <p><img src="../assets/imgs/Frutacristal.png" width="30px">  Fruta Cristal</p>
+                        <p><img src="../assets/imgs/Inverno.png" width="30px"> Inhame da neve</p>
+                        <p><img src="../assets/imgs/acafrao.png" width="30px"> Açafrão</p>
+                    </div>
+                </div>
+            `,
+         aquario: `
+                 <h3>PACOTES DO AQUÁRIO</h3>
+                <div class="pacotes">
+                    <div class="pacote">
+                        <h4>CONJUNTO PEIXES DE RIO <img src="../assets/imgs/Conjunto1.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/Sunfish.png" width="30px"> Peixe-sol</p>
+                        <p><img src="../assets/imgs/Catfish.png" width="30px"> Bagre</p>
+                        <p><img src="../assets/imgs/Alocine.png" width="30px"> Alocine</p>
+                        <p><img src="../assets/imgs/salmaohibrido.png" width="30px"> Salmão Híbrido</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO PEIXES DE LAGO <img src="../assets/imgs/Conjunto2.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/achiga.png" width="30px"> Achigã</p>
+                        <p><img src="../assets/imgs/carpa.png" width="30px"> Carpa</p>
+                        <p><img src="../assets/imgs/peixegato.png" width="30px"> Peixe-gato-cabeçudo</p>
+                        <p><img src="../assets/imgs/esturjao.png" width="30px"> Esturjao</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO COVO <img src="../assets/imgs/Conjunto3.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/LAGOSTA.png" width="30px"> Lagosta</p>
+                        <p><img src="../assets/imgs/lagostim.png" width="30px"> Lagostim</p>
+                        <p><img src="../assets/imgs/carangueijp.png" width="30px"> Caranguejo</p>
+                        <p><img src="../assets/imgs/camarao.png" width="30px"> Camarão</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>PACOTE PEIXES DE OCEANO <img src="../assets/imgs/Conjunto4png.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/Sardine.png" width="30px">  Sardinha</p>
+                        <p><img src="../assets/imgs/Tuna.png" width="30px">  Atum</p>
+                        <p><img src="../assets/imgs/cioba.png" width="30px"> Cioba</p>
+                        <p><img src="../assets/imgs/tilapia.png" width="30px"> Tilápia</p>
+                    </div>
+                </div>
+         `,
+         artesanato: `
+                <h3>PACOTES DA SALA DE ARTESANATO</h3>
+                <div class="pacotes">
+                    <div class="pacote">
+                        <h4>CONJUNTO ANIMAL <img src="../assets/imgs/Conjunto1.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/queijoCabra.png" width="30px"> Queijo de cabra</p>
+                        <p><img src="../assets/imgs/tecido.png" width="30px"> Tecido</p>
+                        <p><img src="../assets/imgs/mel.png" width="30px"> Mel</p>
+                        <p><img src="../assets/imgs/queijo.png" width="30px"> Queijo</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO ARVORES FRUTÍFERAS <img src="../assets/imgs/Conjunto2.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/Maca.png" width="30px"> Maçã</p>
+                        <p><img src="../assets/imgs/laranja.png" width="30px"> Laranja</p>
+                        <p><img src="../assets/imgs/pessego.png" width="30px"> Pêssego</p>
+                        <p><img src="../assets/imgs/cereja.png" width="30px"> Cereja</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO PRODUÇÃO <img src="../assets/imgs/Conjunto3.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/GELEIA.png" width="30px"> Geléia</p>
+                        <p><img src="../assets/imgs/Wine.png" width="30px"> Vinho</p>
+                        <p><img src="../assets/imgs/24px-Truffle_Oil.png" width="30px"> Óleo de Trufas</p>
+                        <p><img src="../assets/imgs/Pickles.png" width="30px"> Conserva</p>
+                    </div>
+                </div>
+         `,
+         quadro: `
+                <h3>PACOTES DO QUADRO DE AVISOS</h3>
+                <div class="pacotes">
+                    <div class="pacote">
+                        <h4>CONJUNTO DO COZINHEIRO <img src="../assets/imgs/Conjunto1.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/XAROPE.png" width="30px">Xarope de Ácer</p>
+                        <p><img src="../assets/imgs/broto.png" width="30px"> Broto de Samambaia</p>
+                        <p><img src="../assets/imgs/hossomaki.png" width="30px"> Hossomaki</p>
+                        <p><img src="../assets/imgs/Ovo].png" width="30px"> Ovo Frito</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO TINTA <img src="../assets/imgs/Conjunto2.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/24px-Red_Mushroom.png" width="30px"> Cogumelo Vermelho</p>
+                        <p><img src="../assets/imgs/ourico.png" width="30px"> Ouriço-do-mar</p>
+                        <p><img src="../assets/imgs/Girassol.png" width="30px"> Girassol</p>
+                        <p><img src="../assets/imgs/36px-Duck_Feather.png" width="30px"> Pena de pato</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO PESQUISA DE CAMPO <img src="../assets/imgs/Conjunto3.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/24px-Purple_Mushroom.png" width="30px"> Cogumelo Roxo</p>
+                        <p><img src="../assets/imgs/24px-Nautilus_Shell.png" width="30px"> Concha de Náutilo</p>
+                        <p><img src="../assets/imgs/24px-Chub.png" width="30px"> Esquálio</p>
+                        <p><img src="../assets/imgs/24px-Frozen_Geode.png" width=30px> Conserva</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO FORRAGEM <img src="../assets/imgs/Conjunto1.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/24px-Wheat.png" width="30px"> Trigo(10)</p>
+                        <p><img src="../assets/imgs/24px-Hay.png" width="30px"> Palha(10)</p>
+                        <p><img src="../assets/imgs/Maca.png" width="30px"> Maçã(3)</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO DE ENCANTADOR <img src="../assets/imgs/Conjunto2.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/24px-Oak_Resin.png" width="30px"> Resina de Carvalho</p>
+                        <p><img src="../assets/imgs/Wine.png" width="30px"> Vinho</p>
+                        <p><img src="../assets/imgs/32px-Rabbit's_Foot.png" width="30px"> Pé de coelho</p>
+                        <p><img src="../assets/imgs/roma.png" width=30px> Romã</p>
+                    </div>
+                </div>
+         `,
+         cofre: `
+                <h3>PACOTES DO QUADRO DE AVISOS</h3>
+                <div class="pacotes">
+                    <div class="pacote">
+                        <h4>CONJUNTO 2.500 OUROS <img src="../assets/imgs/Conjunto1.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/18px-Gold.png" width="30px">2.500 ouros</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO 5.000 ouros <img src="../assets/imgs/Conjunto2.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/18px-Gold.png" width="30px"> 5.000 ouros</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO 10.000 ouros <img src="../assets/imgs/Conjunto3.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/18px-Gold.png" width="30px"> 10.000 ouros</p>
+                    </div>
+                    <div class="pacote">
+                        <h4>CONJUNTO 25.000 ouros <img src="../assets/imgs/Conjunto1.png"></h4>
+                        <div class="status"></div>
+                        <p><img src="../assets/imgs/18px-Gold.png" width="30px"> 25.000 ouros</p>
+                    </div>
+                </div>
+         `
+        };
+    
+        function trocarConteudo(sala){
+            const areaPacotes = document.getElementById('pacotes-por-sala');
 
+            if(sala == 'visaoGeral') {
+                areaPacotes.style.display = 'none';
+            }else{
+                areaPacotes.style.display = 'block';
+                areaPacotes.innerHTML = conteudos[sala];
+            }
+            
+        }
+    </script>
 </html>
 
 <script>

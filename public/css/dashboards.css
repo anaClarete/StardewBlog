@@ -201,7 +201,7 @@ body {
 
 }
 
-.pacotes-por-sala{
+#pacotes-por-sala{
   width: 100%;
   min-height: 40vh;
   height: auto;
