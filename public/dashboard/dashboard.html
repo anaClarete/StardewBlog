@@ -166,173 +166,173 @@
 <script>
     const conteudos_pacotes = {
         despensa: `
-                <h3>PACOTES DA DESPENSA</h3>
-            <div class="pacotes">
-                <div class="pacote">
+            <h3>PACOTES DA DESPENSA</h3>
+            <div class="pacotes" id="1#despensa">
+                <div class="pacote" id="1#primavera">
                     <h4>PACOTE DE PRIMAVERA <img src="../assets/imgs/primavera.png"></h4>
                     <div class="status"></div>
-                    <p id="1#narciso"><span><img src="../assets/imgs/narciso.png" width="30px"> Narciso</span><input type="checkbox">
-                    <p id="2#dentedeleao"><span><img src="../assets/imgs/primavera.png" width="30px"> Dente-de-leão</span><input type="checkbox">
-                    <p id="3#alhoporo"><span><img src="../assets/imgs/alhoporo.png" width="30px"> Alho-poró</span><input type="checkbox">
-                    <p id="4#cebolinha"><span><img src="../assets/imgs/cebolinha.png" width="30px"> Cebolinha</span><input type="checkbox">
+                    <p id="1#narciso"onclick= "entregarItem(this)"><span><img src="../assets/imgs/narciso.png" width="30px"> Narciso</span><input type="checkbox">
+                    <p id="2#dentedeleao"onclick= "entregarItem(this)"><span><img src="../assets/imgs/primavera.png" width="30px"> Dente-de-leão</span><input type="checkbox">
+                    <p id="3#alhoporo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/alhoporo.png" width="30px"> Alho-poró</span><input type="checkbox">
+                    <p id="4#cebolinha"onclick= "entregarItem(this)"><span><img src="../assets/imgs/cebolinha.png" width="30px"> Cebolinha</span><input type="checkbox">
                 </div>
-                <div class="pacote">
+                <div class="pacote" id="2#verao">
                     <h4>PACOTE DE VERÃO <img src="../assets/imgs/Verao.png"></h4>
                     <div class="status"></div>
-                    <p id="5#uva"><span><img src="../assets/imgs/Uva.png" width="30px"> Uva</span><input type="checkbox">
-                    <p id="6#cafedejardim"><span><img src="../assets/imgs/Spice_Berry.png" width="30px"> Café de jardim</span><input type="checkbox">
-                    <p id="7#ervilhadecheiro"><span><img src="../assets/imgs/ervilhacheiro.png" width="30px"> Ervilha de cheiro</span><input type="checkbox">
+                    <p id="5#uva"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Uva.png" width="30px"> Uva</span><input type="checkbox">
+                    <p id="6#cafedejardim"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Spice_Berry.png" width="30px"> Café de jardim</span><input type="checkbox">
+                    <p id="7#ervilhadecheiro"onclick= "entregarItem(this)"><span><img src="../assets/imgs/ervilhacheiro.png" width="30px"> Ervilha de cheiro</span><input type="checkbox">
                 </div>
-                <div class="pacote">
+                <div class="pacote" id="3#outono">
                     <h4>PACOTE DE OUTONO <img src="../assets/imgs/Outono.png"></h4>
                     <div class="status"></div>
-                    <p id="8#cogumelo"><span><img src="../assets/imgs/cogumelo.png" width="30px"> Cogumelo</span><input type="checkbox">
-                    <p id="9#ameixaselvagem"><span><img src="../assets/imgs/ameixaselvagem.png" width="30px"> Ameixa selvagem</span><input type="checkbox">
-                    <p id="10#avela"><span><img src="../assets/imgs/Outono.png" width="30px"> Avelã</span><input type="checkbox">
-                    <p id="11#amora"><span><img src="../assets/imgs/amora.png" width="30px"> Amora</span><input type="checkbox">
+                    <p id="8#cogumelo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/cogumelo.png" width="30px"> Cogumelo</span><input type="checkbox">
+                    <p id="9#ameixaselvagem"onclick= "entregarItem(this)"><span><img src="../assets/imgs/ameixaselvagem.png" width="30px"> Ameixa selvagem</span><input type="checkbox">
+                    <p id="10#avela"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Outono.png" width="30px"> Avelã</span><input type="checkbox">
+                    <p id="11#amora"onclick= "entregarItem(this)"><span><img src="../assets/imgs/amora.png" width="30px"> Amora</span><input type="checkbox">
                 </div>
-                <div class="pacote">
+                <div class="pacote" id="4#inverno">
                     <h4>PACOTE DE VERÃO <img src="../assets/imgs/Inverno.png"></h4>
                     <div class="status"></div>
-                    <p id="12#raizdeinverno"><span><img src="../assets/imgs/raizInverno.png" width="30px"> Raíz de inverno</span><input type="checkbox">
-                    <p id="13#frutacristal"><span><img src="../assets/imgs/Frutacristal.png" width="30px"> Fruta Cristal</span><input type="checkbox">
-                    <p id="14#inhamedaneve"><span><img src="../assets/imgs/Inverno.png" width="30px"> Inhame da neve</span><input type="checkbox">
-                    <p id="15#acafrao"><span><img src="../assets/imgs/acafrao.png" width="30px"> Açafrão</span><input type="checkbox">
+                    <p id="12#raizdeinverno"onclick= "entregarItem(this)"><span><img src="../assets/imgs/raizInverno.png" width="30px"> Raíz de inverno</span><input type="checkbox">
+                    <p id="13#frutacristal"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Frutacristal.png" width="30px"> Fruta Cristal</span><input type="checkbox">
+                    <p id="14#inhamedaneve"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Inverno.png" width="30px"> Inhame da neve</span><input type="checkbox">
+                    <p id="15#acafrao"onclick= "entregarItem(this)"><span><img src="../assets/imgs/acafrao.png" width="30px"> Açafrão</span><input type="checkbox">
                 </div>
             </div>
             `,
         aquario: `
                  <h3>PACOTES DO AQUÁRIO</h3>
-                <div class="pacotes">
-                    <div class="pacote">
+                <div class="pacotes" id="2#aquario">
+                    <div class="pacote" id="5#rio">
                         <h4>CONJUNTO PEIXES DE RIO <img src="../assets/imgs/Conjunto1.png"></h4>
                         <div class="status"></div>
-                        <p id="16#peixesol"><span><img src="../assets/imgs/Sunfish.png" width="30px"> Peixe-sol</span><input type="checkbox"></p>
-                        <p id="17#bagre"><span><img src="../assets/imgs/Catfish.png" width="30px"> Bagre</span><input type="checkbox"></p>
-                        <p id="18#alocine"><span><img src="../assets/imgs/Alocine.png" width="30px"> Alocine</span><input type="checkbox"></p>
-                        <p id="19#salmaohibrido"><span><img src="../assets/imgs/salmaohibrido.png" width="30px"> Salmão Híbrido</span><input type="checkbox"></p>
+                        <p id="16#peixesol"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Sunfish.png" width="30px"> Peixe-sol</span><input type="checkbox"></p>
+                        <p id="17#bagre"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Catfish.png" width="30px"> Bagre</span><input type="checkbox"></p>
+                        <p id="18#alocine"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Alocine.png" width="30px"> Alocine</span><input type="checkbox"></p>
+                        <p id="19#salmaohibrido"onclick= "entregarItem(this)"><span><img src="../assets/imgs/salmaohibrido.png" width="30px"> Salmão Híbrido</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="6#lago">
                         <h4>CONJUNTO PEIXES DE LAGO <img src="../assets/imgs/Conjunto2.png"></h4>
                         <div class="status"></div>
-                        <p id="20#achiga"><span><img src="../assets/imgs/achiga.png" width="30px"> Achigã</span><input type="checkbox"></p>
-                        <p id="21#carpa"><span><img src="../assets/imgs/carpa.png" width="30px"> Carpa</span><input type="checkbox"></p>
-                        <p id="22#peixegatocabecudo"><span><img src="../assets/imgs/peixegato.png" width="30px"> Peixe-gato-cabeçudo</span><input type="checkbox"></p>
-                        <p id="23#esturjao"><span><img src="../assets/imgs/esturjao.png" width="30px"> Esturjao</span><input type="checkbox"></p>
+                        <p id="20#achiga"onclick= "entregarItem(this)"><span><img src="../assets/imgs/achiga.png" width="30px"> Achigã</span><input type="checkbox"></p>
+                        <p id="21#carpa"onclick= "entregarItem(this)"><span><img src="../assets/imgs/carpa.png" width="30px"> Carpa</span><input type="checkbox"></p>
+                        <p id="22#peixegatocabecudo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/peixegato.png" width="30px"> Peixe-gato-cabeçudo</span><input type="checkbox"></p>
+                        <p id="23#esturjao"onclick= "entregarItem(this)"><span><img src="../assets/imgs/esturjao.png" width="30px"> Esturjao</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="7#covo">
                         <h4>CONJUNTO COVO <img src="../assets/imgs/Conjunto3.png"></h4>
                         <div class="status"></div>
-                        <p id="24#lagosta"><span><img src="../assets/imgs/LAGOSTA.png" width="30px"> Lagosta</span><input type="checkbox"></p>
-                        <p id="25#lagostim"><span><img src="../assets/imgs/lagostim.png" width="30px"> Lagostim</span><input type="checkbox"></p>
-                        <p id="26#caranguejo"><span><img src="../assets/imgs/carangueijp.png" width="30px"> Caranguejo</span><input type="checkbox"></p>
-                        <p id="27#camarao"><span><img src="../assets/imgs/camarao.png" width="30px"> Camarão</span><input type="checkbox"></p>
+                        <p id="24#lagosta"onclick= "entregarItem(this)"><span><img src="../assets/imgs/LAGOSTA.png" width="30px"> Lagosta</span><input type="checkbox"></p>
+                        <p id="25#lagostim"onclick= "entregarItem(this)"><span><img src="../assets/imgs/lagostim.png" width="30px"> Lagostim</span><input type="checkbox"></p>
+                        <p id="26#caranguejo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/carangueijp.png" width="30px"> Caranguejo</span><input type="checkbox"></p>
+                        <p id="27#camarao"onclick= "entregarItem(this)"><span><img src="../assets/imgs/camarao.png" width="30px"> Camarão</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="8#oceano">
                         <h4>PACOTE PEIXES DE OCEANO <img src="../assets/imgs/Conjunto4png.png"></h4>
                         <div class="status"></div>
-                        <p id="28#sardinha"><span><img src="../assets/imgs/Sardine.png" width="30px">  Sardinha</span><input type="checkbox"></p>
-                        <p id="29#atum"><span><img src="../assets/imgs/Tuna.png" width="30px">  Atum</span><input type="checkbox"></p>
-                        <p id="30#cioba"><span><img src="../assets/imgs/cioba.png" width="30px"> Cioba</span><input type="checkbox"></p>
-                        <p id="31#tilapia"><span><img src="../assets/imgs/tilapia.png" width="30px"> Tilápia</span><input type="checkbox"></p>
+                        <p id="28#sardinha"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Sardine.png" width="30px">  Sardinha</span><input type="checkbox"></p>
+                        <p id="29#atum"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Tuna.png" width="30px">  Atum</span><input type="checkbox"></p>
+                        <p id="30#cioba"onclick= "entregarItem(this)"><span><img src="../assets/imgs/cioba.png" width="30px"> Cioba</span><input type="checkbox"></p>
+                        <p id="31#tilapia"onclick= "entregarItem(this)"><span><img src="../assets/imgs/tilapia.png" width="30px"> Tilápia</span><input type="checkbox"></p>
                     </div>
                 </div>
          `,
         artesanato: `
                <h3>PACOTES DA SALA DE ARTESANATO</h3>
-                <div class="pacotes">
-                    <div class="pacote">
+                <div class="pacotes" id="3#saladeartesanato">
+                    <div class="pacote" id="9#animal">
                         <h4>CONJUNTO ANIMAL <img src="../assets/imgs/Conjunto1.png"></h4>
                         <div class="status"></div>
-                        <p id="32#queijodecabra"><span><img src="../assets/imgs/queijoCabra.png" width="30px"> Queijo de cabra</span><input type="checkbox"></p>
-                        <p id="33#tecido"><span><img src="../assets/imgs/tecido.png" width="30px"> Tecido</span><input type="checkbox"></p>
-                        <p id="34#mel"><span><img src="../assets/imgs/mel.png" width="30px"> Mel</span><input type="checkbox"></p>
-                        <p id="35#queijo"><span><img src="../assets/imgs/queijo.png" width="30px"> Queijo</span><input type="checkbox"></p>
+                        <p id="32#queijodecabra"onclick= "entregarItem(this)"><span><img src="../assets/imgs/queijoCabra.png" width="30px"> Queijo de cabra</span><input type="checkbox"></p>
+                        <p id="33#tecido"onclick= "entregarItem(this)"><span><img src="../assets/imgs/tecido.png" width="30px"> Tecido</span><input type="checkbox"></p>
+                        <p id="34#mel"onclick= "entregarItem(this)"><span><img src="../assets/imgs/mel.png" width="30px"> Mel</span><input type="checkbox"></p>
+                        <p id="35#queijo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/queijo.png" width="30px"> Queijo</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="10#arvores">
                         <h4>CONJUNTO ARVORES FRUTÍFERAS <img src="../assets/imgs/Conjunto2.png"></h4>
                         <div class="status"></div>
-                        <p id="36#maca"><span><img src="../assets/imgs/Maca.png" width="30px"> Maçã</span><input type="checkbox"></p>
-                        <p id="37#laranja"><span><img src="../assets/imgs/laranja.png" width="30px"> Laranja</span><input type="checkbox"></p>
-                        <p id="38#pessego"><span><img src="../assets/imgs/pessego.png" width="30px"> Pêssego</span><input type="checkbox"></p>
-                        <p id="39#cereja"><span><img src="../assets/imgs/cereja.png" width="30px"> Cereja</span><input type="checkbox"></p>
+                        <p id="36#maca"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Maca.png" width="30px"> Maçã</span><input type="checkbox"></p>
+                        <p id="37#laranja"onclick= "entregarItem(this)"><span><img src="../assets/imgs/laranja.png" width="30px"> Laranja</span><input type="checkbox"></p>
+                        <p id="38#pessego"onclick= "entregarItem(this)"><span><img src="../assets/imgs/pessego.png" width="30px"> Pêssego</span><input type="checkbox"></p>
+                        <p id="39#cereja"onclick= "entregarItem(this)"><span><img src="../assets/imgs/cereja.png" width="30px"> Cereja</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="11#producao">
                         <h4>CONJUNTO PRODUÇÃO <img src="../assets/imgs/Conjunto3.png"></h4>
                         <div class="status"></div>
-                        <p id="40#geleia"><span><img src="../assets/imgs/GELEIA.png" width="30px"> Geléia</span><input type="checkbox"></p>
-                        <p id="41#vinho"><span><img src="../assets/imgs/Wine.png" width="30px"> Vinho</span><input type="checkbox"></p>
-                        <p id="42#oleodetrufa"><span><img src="../assets/imgs/24px-Truffle_Oil.png" width="30px"> Óleo de Trufas</span><input type="checkbox"></p>
-                        <p id="43#conserva"><span><img src="../assets/imgs/Pickles.png" width="30px"> Conserva</span><input type="checkbox"></p>
+                        <p id="40#geleia"onclick= "entregarItem(this)"><span><img src="../assets/imgs/GELEIA.png" width="30px"> Geléia</span><input type="checkbox"></p>
+                        <p id="41#vinho"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Wine.png" width="30px"> Vinho</span><input type="checkbox"></p>
+                        <p id="42#oleodetrufa"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Truffle_Oil.png" width="30px"> Óleo de Trufas</span><input type="checkbox"></p>
+                        <p id="43#conserva"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Pickles.png" width="30px"> Conserva</span><input type="checkbox"></p>
                     </div>
                 </div>
          `,
         quadro: `
                 <h3>PACOTES DO QUADRO DE AVISOS</h3>
-                <div class="pacotes">
-                    <div class="pacote">
+                <div class="pacotes" id="4#quadrodeavisos">
+                    <div class="pacote" id="12#cozinheiro">
                         <h4>CONJUNTO DO COZINHEIRO <img src="../assets/imgs/Conjunto1.png"></h4>
                         <div class="status"></div>
-                        <p id="44#xaropedeacer"><span><img src="../assets/imgs/XAROPE.png" width="30px">Xarope de Ácer</span><input type="checkbox"></p>
-                        <p id="45#brotodesamambaia"><span><img src="../assets/imgs/broto.png" width="30px"> Broto de Samambaia</span><input type="checkbox"></p>
-                        <p id="46#hossomaki"><span><img src="../assets/imgs/hossomaki.png" width="30px"> Hossomaki</span><input type="checkbox"></p>
-                        <p id="47#ovofrito"><span><img src="../assets/imgs/Ovo].png" width="30px"> Ovo Frito</span><input type="checkbox"></p>
+                        <p id="44#xaropedeacer"onclick= "entregarItem(this)"><span><img src="../assets/imgs/XAROPE.png" width="30px">Xarope de Ácer</span><input type="checkbox"></p>
+                        <p id="45#brotodesamambaia"onclick= "entregarItem(this)"><span><img src="../assets/imgs/broto.png" width="30px"> Broto de Samambaia</span><input type="checkbox"></p>
+                        <p id="46#hossomaki"onclick= "entregarItem(this)"><span><img src="../assets/imgs/hossomaki.png" width="30px"> Hossomaki</span><input type="checkbox"></p>
+                        <p id="47#ovofrito"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Ovo].png" width="30px"> Ovo Frito</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="13#tinta">
                         <h4>CONJUNTO TINTA <img src="../assets/imgs/Conjunto2.png"></h4>
                         <div class="status"></div>
-                        <p id="48#cogumelovermelho"><span><img src="../assets/imgs/24px-Red_Mushroom.png" width="30px"> Cogumelo Vermelho</span><input type="checkbox"></p>
-                        <p id="49#ouricodomar"><span><img src="../assets/imgs/ourico.png" width="30px"> Ouriço-do-mar</span><input type="checkbox"></p>
-                        <p id="50#girassol"><span><img src="../assets/imgs/Girassol.png" width="30px"> Girassol</span><input type="checkbox"></p>
-                        <p id="51#penadepato"><span><img src="../assets/imgs/36px-Duck_Feather.png" width="30px"> Pena de pato</span><input type="checkbox"></p>
+                        <p id="48#cogumelovermelho"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Red_Mushroom.png" width="30px"> Cogumelo Vermelho</span><input type="checkbox"></p>
+                        <p id="49#ouricodomar"onclick= "entregarItem(this)"><span><img src="../assets/imgs/ourico.png" width="30px"> Ouriço-do-mar</span><input type="checkbox"></p>
+                        <p id="50#girassol"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Girassol.png" width="30px"> Girassol</span><input type="checkbox"></p>
+                        <p id="51#penadepato"onclick= "entregarItem(this)"><span><img src="../assets/imgs/36px-Duck_Feather.png" width="30px"> Pena de pato</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="14#pesquisa">
                         <h4>CONJUNTO PESQUISA DE CAMPO <img src="../assets/imgs/Conjunto3.png"></h4>
                         <div class="status"></div>
-                        <p id="52#cogumeloroxo"><span><img src="../assets/imgs/24px-Purple_Mushroom.png" width="30px"> Cogumelo Roxo</span><input type="checkbox"></p>
-                        <p id="53#conchadenautilo"><span><img src="../assets/imgs/24px-Nautilus_Shell.png" width="30px"> Concha de Náutilo</span><input type="checkbox"></p>
-                        <p id="54#esqualio"><span><img src="../assets/imgs/24px-Chub.png" width="30px"> Esquálio</span><input type="checkbox"></p>
-                        <p id="55#conserva"><span><img src="../assets/imgs/24px-Frozen_Geode.png" width=30px> Conserva</span><input type="checkbox"></p>
+                        <p id="52#cogumeloroxo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Purple_Mushroom.png" width="30px"> Cogumelo Roxo</span><input type="checkbox"></p>
+                        <p id="53#conchadenautilo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Nautilus_Shell.png" width="30px"> Concha de Náutilo</span><input type="checkbox"></p>
+                        <p id="54#esqualio"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Chub.png" width="30px"> Esquálio</span><input type="checkbox"></p>
+                        <p id="55#conserva"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Frozen_Geode.png" width=30px> Conserva</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="15#forragem">
                         <h4>CONJUNTO FORRAGEM <img src="../assets/imgs/Conjunto1.png"></h4>
                         <div class="status"></div>
-                        <p id="56#trigo"><span><img src="../assets/imgs/24px-Wheat.png" width="30px"> Trigo(10)</span><input type="checkbox"></p>
-                        <p id="57#palha"><span><img src="../assets/imgs/24px-Hay.png" width="30px"> Palha(10)</span><input type="checkbox"></p>
-                        <p id="58#maca"><span><img src="../assets/imgs/Maca.png" width="30px"> Maçã(3)</span><input type="checkbox"></p>
+                        <p id="56#trigo"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Wheat.png" width="30px"> Trigo(10)</span><input type="checkbox"></p>
+                        <p id="57#palha"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Hay.png" width="30px"> Palha(10)</span><input type="checkbox"></p>
+                        <p id="58#maca"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Maca.png" width="30px"> Maçã(3)</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="16#encantador">
                         <h4>CONJUNTO DE ENCANTADOR <img src="../assets/imgs/Conjunto2.png"></h4>
                         <div class="status"></div>
-                        <p id="59#resinadecarvalho"><span><img src="../assets/imgs/24px-Oak_Resin.png" width="30px"> Resina de Carvalho</span><input type="checkbox"></p>
-                        <p id="60#vinho"><span><img src="../assets/imgs/Wine.png" width="30px"> Vinho</span><input type="checkbox"></p>
-                        <p id="61#pedecoelho"><span><img src="../assets/imgs/32px-Rabbit's_Foot.png" width="30px"> Pé de coelho</span><input type="checkbox"></p>
-                        <p id="62#roma"><span><img src="../assets/imgs/roma.png" width=30px> Romã</span><input type="checkbox"></p>
+                        <p id="59#resinadecarvalho"onclick= "entregarItem(this)"><span><img src="../assets/imgs/24px-Oak_Resin.png" width="30px"> Resina de Carvalho</span><input type="checkbox"></p>
+                        <p id="60#vinho"onclick= "entregarItem(this)"><span><img src="../assets/imgs/Wine.png" width="30px"> Vinho</span><input type="checkbox"></p>
+                        <p id="61#pedecoelho"onclick= "entregarItem(this)"><span><img src="../assets/imgs/32px-Rabbit's_Foot.png" width="30px"> Pé de coelho</span><input type="checkbox"></p>
+                        <p id="62#roma"onclick= "entregarItem(this)"><span><img src="../assets/imgs/roma.png" width=30px> Romã</span><input type="checkbox"></p>
                     </div>
                 </div>
          `,
         cofre: `
                 <h3>PACOTES DO QUADRO DE AVISOS</h3>
-                <div class="pacotes">
-                    <div class="pacote">
+                <div class="pacotes" id="5#cofre">
+                    <div class="pacote" id="17#2500">
                         <h4>CONJUNTO 2.500 OUROS <img src="../assets/imgs/Conjunto1.png"></h4>
                         <div class="status"></div>
-                        <p id="63#2500"><span><img src="../assets/imgs/18px-Gold.png" width="30px">2.500 ouros</span><input type="checkbox"></p>
+                        <p id="63#2500"onclick= "entregarItem(this)"><span><img src="../assets/imgs/18px-Gold.png" width="30px">2.500 ouros</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="18#5000">
                         <h4>CONJUNTO 5.000 ouros <img src="../assets/imgs/Conjunto2.png"></h4>
                         <div class="status"></div>
-                        <p id="64#5000"><span><img src="../assets/imgs/18px-Gold.png" width="30px"> 5.000 ouros</span><input type="checkbox"></p>
+                        <p id="64#5000"onclick= "entregarItem(this)"><span><img src="../assets/imgs/18px-Gold.png" width="30px"> 5.000 ouros</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="19#10000">
                         <h4>CONJUNTO 10.000 ouros <img src="../assets/imgs/Conjunto3.png"></h4>
                         <div class="status"></div>
-                        <p id="65#10000"><span><img src="../assets/imgs/18px-Gold.png" width="30px"> 10.000 ouros</span><input type="checkbox"></p>
+                        <p id="65#10000"onclick= "entregarItem(this)"><span><img src="../assets/imgs/18px-Gold.png" width="30px"> 10.000 ouros</span><input type="checkbox"></p>
                     </div>
-                    <div class="pacote">
+                    <div class="pacote" id="20#25000">
                         <h4>CONJUNTO 25.000 ouros <img src="../assets/imgs/Conjunto1.png"></h4>
                         <div class="status"></div>
-                        <p id="66#25000"><span><img src="../assets/imgs/18px-Gold.png" width="30px"> 25.000 ouros</span><input type="checkbox"></p>
+                        <p id="66#25000"onclick= "entregarItem(this)"><span><img src="../assets/imgs/18px-Gold.png" width="30px"> 25.000 ouros</span><input type="checkbox"></p>
                     </div>
                 </div>
          `
@@ -347,6 +347,48 @@
             areaPacotes.style.display = 'block';
             areaPacotes.innerHTML = conteudos_pacotes[sala];
         }
+
+    }
+
+    function entregarItem(elemento){
+        
+        var dadosItem = elemento.id;
+        var idItem = dadosItem.split("#")[0];
+        var nomeItem = dadosItem.split("#")[1];
+
+
+        var pacote = elemento.parentNode;
+        var dadosPacote = pacote.id;
+        var idPacote = dadosPacote.split("#")[0];
+        var nomePacote = dadosPacote.split("#")[1];
+
+        var sala = pacote.parentNode;
+        var dadosSala = sala.id;
+        var idSala = dadosSala.split("#")[0];
+        var nomeSala = dadosSala.split("#")[1];
+
+    
+        var body = {
+            "id_cliente" : sessionStorage.ID_USUARIO,
+            "id_sala": idSala,
+            "nome_sala": nomeSala,
+            "id_pacote": idPacote,
+            "nome_pacote": nomePacote,
+            "id_item": idItem,
+            "nome_item": nomeItem
+        }
+
+        console.log(body);
+
+        // fetch("/itens/cadastrar", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         body
+        //     })
+        // })
 
     }
 </script>
