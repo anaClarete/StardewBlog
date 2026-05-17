@@ -17,7 +17,7 @@ senha VARCHAR(30)
 );
 
 CREATE TABLE salas(
-idSala INT PRIMARY KEY AUTO_INCREMENT,
+idSala INT PRIMARY KEY,
 nome VARCHAR(50),
 fkUsuario INT,
 CONSTRAINT ctFKUsuario 
@@ -26,19 +26,27 @@ REFERENCES usuario(idUsuario)
 );
 
 CREATE TABLE pacotes (
-idPacote INT PRIMARY KEY AUTO_INCREMENT,
+idPacote INT PRIMARY KEY,
 nome VARCHAR(50),
 fkSala INT,
+fkUsuario INT,
 CONSTRAINT ctFkSala
 FOREIGN KEY(fkSala)
-REFERENCES salas(idSala)
+REFERENCES salas(idSala),
+CONSTRAINT ctFKUsuario 
+FOREIGN KEY(fkUsuario)
+REFERENCES usuario(idUsuario)
 );
 
 CREATE TABLE itens (
-idItem INT PRIMARY KEY AUTO_INCREMENT,
+idItem INT PRIMARY KEY,
 nome VARCHAR(50),
 fkPacote INT,
+fkUsuario INT,
 status TINYINT,
+CONSTRAINT ckFkUsuario
+FOREIGN KEY (fkUsuario)
+REFERENCES usuario(idUsuario)
 CONSTRAINT ctFkPacote
 FOREIGN KEY (fkPacote) 
 REFERENCES pacotes(idPacote)

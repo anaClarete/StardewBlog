@@ -350,8 +350,8 @@
 
     }
 
-    function entregarItem(elemento){
-        
+    function entregarItem(elemento) {
+
         var dadosItem = elemento.id;
         var idItem = dadosItem.split("#")[0];
         var nomeItem = dadosItem.split("#")[1];
@@ -367,28 +367,32 @@
         var idSala = dadosSala.split("#")[0];
         var nomeSala = dadosSala.split("#")[1];
 
-    
-        var body = {
-            "id_cliente" : sessionStorage.ID_USUARIO,
-            "id_sala": idSala,
-            "nome_sala": nomeSala,
-            "id_pacote": idPacote,
-            "nome_pacote": nomePacote,
-            "id_item": idItem,
-            "nome_item": nomeItem
+
+        var dados = {
+            "id_cliente": sessionStorage.ID_USUARIO,
+            "dados_sala": {
+                "id": idSala,
+                "nome": nomeSala
+            },
+            "dados_pacote": {
+                "id": idPacote,
+                "nome": nomePacote
+            },
+            "dados_item": {
+                "id": idItem,
+                "nome": nomeItem
+            }
         }
 
-        console.log(body);
-
-        // fetch("/itens/cadastrar", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         body
-        //     })
-        // })
+        fetch("/itens/entregar_item", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                dados
+            })
+        })
 
     }
 </script>
