@@ -60,19 +60,19 @@
               <input id="confirmacao_senha_input" type="password" placeholder="******" />
             </div>
             <div class="botao_centraliza">
-            <button class="botao" onclick="cadastrar()">Cadastrar</button>
+              <button class="botao" onclick="cadastrar()">Cadastrar</button>
+            </div>
             <div id="div_erros_login">
               <div id="mensagem_erro"></div>
             </div>
-          </div>
-          <div id="div_aguardar" class="loading-div" style="display:none; justify-content:center;">
-            <img src="./assets/imgs/loading.gif" id="loading-gif" width="100px">
-          </div>
+            <div id="div_aguardar" class="loading-div" style="display:none; justify-content:center;">
+              <img src="./assets/imgs/loading.gif" id="loading-gif" width="100px">
+            </div>
 
-          
+
+          </div>
         </div>
       </div>
-    </div>
 </body>
 
 </html>
@@ -84,7 +84,7 @@
 
   function cadastrar() {
     // aguardar();
-
+    let mensagem = document.getElementById('mensagem_erro');
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
@@ -99,19 +99,19 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-      div_erros_login.style.display = "block";
-      mensagem_erro.innerHTML =
-        "<p>(Mensagem de erro para todos os campos em branco)</p>";
-
-      finalizarAguardar();
+      mensagem.innerHTML = "<p><b>Erro: todos os campos devem estar preenchidos</b></p>";
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
+    }else if(senhaVar.length < 8){
+      mensagem.innerHTML = `<p><b>A senha deve conter pelo menos 8 caracteres.</b></p>`
+      return false;
     }
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-
-    // Enviando o valor da nova input
+     else if (senhaVar != confirmacaoSenhaVar) {
+      mensagem.innerHTML = `<p><b>Ops! As senhas digitadas sao diferentes.</b></p>`;
+      return false;
+    }else if(!emailVar.includes(".com") || !emailVar.includes('.com')){
+      mensagem.innerHTML = `<p><b>Email não é válido</b></p>`;
+      return false;
+    }
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
@@ -129,9 +129,7 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
+          mensagem.innerHTML =
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
@@ -140,8 +138,10 @@
 
           limparFormulario();
           finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+        } else if (resposta.status == 500) {
+          mensagem.innerHTML =
+            "Email ja cadastrado no banco!";
+          //throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
@@ -153,7 +153,7 @@
   }
 
   // Listando empresas cadastradas 
-  function sumirMensagem() {
-    div_erros_login.style.display = "none";
-  }
+  // function sumirMensagem() {
+  //   div_erros_login.style.display = "none";
+  // }
 </script>

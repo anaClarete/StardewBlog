@@ -45,6 +45,26 @@ function autenticar(req, res) {
 
 }
 
+function validarEmail(req, res) {
+    var email = req.body.emailServer;
+    usuarioModel.selectByEmail(email)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(500).json("Email já cadastrado no banco!");
+            }
+        })
+        // .catch(
+        //     function (erro) {
+        //         console.log(erro);
+        //         console.log(
+        //             "Email já cadastrado no banco!",
+        //             erro.sqlMessage
+        //         );
+        //         res.status(500).json(erro.sqlMessage);
+        //     }
+        // );
+};
+
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
@@ -60,26 +80,41 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else {
 
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
+        usuarioModel.selectByEmail(email)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(500).json("Email já cadastrado no banco!");
+            }else{
+                usuarioModel.cadastrar(nome, email, senha)
+                    .then(
+                        function (resultado) {
+                            res.json(resultado);
+                        }
+                    ).catch(
+                        function (erro) {
+                            console.log(erro);
+                            console.log(
+                                "\nHouve um erro ao realizar o cadastro! Erro: ",
+                                erro.sqlMessage
+                            );
+                            res.status(500).json(erro.sqlMessage);
+                        }
                     );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+
+            }
+        })
+
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
     }
+}
+
+function buscarCadastroPorEmail() {
+
 }
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    validarEmail
 }

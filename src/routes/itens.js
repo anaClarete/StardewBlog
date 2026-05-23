@@ -9,7 +9,9 @@ router.post("/entregar_item", function (req, res) {
     itemController.entregarItem(req, res);
 });
 
-router.get("/listar", function (req, res) {
+router.get("/listar/:idUsuario/:idSala", function (req, res) {~
+
+    console.log("Entrou na rota listar");
     // função a ser chamada quando acessar /carros/listar
     itemController.listar(req, res);
 });

@@ -3,9 +3,14 @@ var salaModel = require("../models/salaModel");
 var pacoteModel = require("../models/pacoteModel");
 
 function listar(req, res) {
-    itemModel.listar().then(function (resultado) {
+    var idUsuario = req.params.idUsuario;
+    var idSala = req.params.idSala;
+    itemModel.listar(idUsuario, idSala).then(function (resultado) {
+
+
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
+        console.log(resultado)
     }).catch(function (erro) {
         res.status(500).json(erro.sqlMessage);
     })
@@ -57,23 +62,46 @@ function entregarItem(req, res) {
             }
         })
 
-        itemModel.buscarItemPorId(idItem)
-            .then(function (resultado) {
-                if (resultado.length > 0) {
-                    console.log('Item já existe no banco');
-                    res.status(400);
-                }else{
-                    itemModel.cadastrar(idItem, nomeItem, idPacote, idCliente).then(function (resultado) {
-                        res.status(200).json(resultado);
-                    }).catch(function (erro) {
-                        res.status(500).json(erro.sqlMessage);
+    itemModel.buscarItemPorId(idItem)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                console.log('Item já existe no banco');
+                res.status(400);
+                itemModel.verificarStatusItem(idItem)
+                    .then(function (resultado) {
+                        var statusItem = resultado[0].status;
+                        if (statusItem == 1) {
+                            itemModel.AtualizarStatusItem(idItem, 0)
+                                .then(function (resultado) {
+                                    res.status(200).json(resultado);
+                                }).catch(function (erro) {
+                                    res.status(500).json(erro.sqlMessage);
+                                })
+                        } else {
+                            itemModel.AtualizarStatusItem(idItem, 1)
+                                .then(function (resultado) {
+                                    res.status(200).json(resultado);
+                                }).catch(function (erro) {
+                                    res.status(500).json(erro.sqlMessage);
+                                })
+                        }
                     })
-                }
+                    .catch(function (erro) {
+                        console.log(erro);
+                    })
+            } else {
+                itemModel.cadastrar(idItem, nomeItem, idPacote, idCliente).then(function (resultado) {
+                    res.status(200).json(resultado);
+                }).catch(function (erro) {
+                    res.status(500).json(erro.sqlMessage);
+                })
+            }
         })
-}        
+}
 
 module.exports = {
-    entregarItem
+    entregarItem,
+    listar
 };
 
 
