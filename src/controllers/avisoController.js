@@ -8,8 +8,8 @@ function listar(req, res) {
             res.status(204).send("Nenhum resultado encontrado!")
         }
     }).catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        //console.log(erro);
+        //console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
@@ -29,11 +29,11 @@ function listarPorUsuario(req, res) {
         )
         .catch(
             function (erro) {
-                console.log(erro);
-                console.log(
-                    "Houve um erro ao buscar os avisos: ",
-                    erro.sqlMessage
-                );
+                //console.log(erro);
+                //console.log(
+                //     "Houve um erro ao buscar os avisos: ",
+                //     erro.sqlMessage
+                // );
                 res.status(500).json(erro.sqlMessage);
             }
         );
@@ -53,8 +53,8 @@ function pesquisarDescricao(req, res) {
             }
         ).catch(
             function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+                //console.log(erro);
+                //console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             }
         );
@@ -80,8 +80,8 @@ function publicar(req, res) {
             )
             .catch(
                 function (erro) {
-                    console.log(erro);
-                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                    //console.log(erro);
+                    //console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
             );
@@ -100,8 +100,8 @@ function editar(req, res) {
         )
         .catch(
             function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                //console.log(erro);
+                //console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             }
         );
@@ -119,8 +119,8 @@ function deletar(req, res) {
         )
         .catch(
             function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
+                //console.log(erro);
+                //console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             }
         );

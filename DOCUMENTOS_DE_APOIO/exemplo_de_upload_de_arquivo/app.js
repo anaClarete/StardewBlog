@@ -16,6 +16,6 @@ app.use(cors());
 app.use("/usuarios", usuarioRouter);
 
 app.listen(PORTA, () => {
-  console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA}`);
+  //console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA}`);
 });
 

@@ -166,7 +166,7 @@ function listar() {
     var instrucao = `
         SELECT * FROM carro;
     `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
+    //console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
@@ -174,7 +174,7 @@ function cadastrar(nome) {
     var instrucao = `
         INSERT INTO carro (nome) VALUES ('${nome}');
     `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
+    //console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 ```
@@ -197,7 +197,7 @@ function listar() {
     var instrucao = `
         SELECT * FROM carro;
     `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
+    //console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
@@ -205,7 +205,7 @@ function cadastrar(nome) {
     var instrucao = `
         INSERT INTO carro (nome) VALUES ('${nome}');
     `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
+    //console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 

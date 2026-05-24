@@ -5,6 +5,7 @@ function cadastrar(idItem, nomeItem, idPacote, idCliente) {
 
     var instrucaoSql = `INSERT INTO itens (idItem, nome, fkPacote, fkUsuario, status) VALUES ('${idItem}', '${nomeItem}','${idPacote}','${idCliente}', '${1}')`;
 
+    console.log("Entrei no model do entregar item");
     console.log(instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -22,21 +23,29 @@ function listar(idUsuario, idSala) {
                         AND i.status = 1
                         AND i.fkUsuario = ${idUsuario};`;
 
-    return database.executar(instrucaoSql)
-        .then(function (resposta) {
-            var valorRecebido = resposta[0].quantidade;
-            console.log(valorRecebido);
-        })
-        .catch(function (erro) {
-            console.log(erro);
-        })
-
-
+    return database.executar(instrucaoSql);
 }
 
-function buscarItemPorId(idItem) {
+function getTFullItensByUserID(idUsuario) {
 
-    var instrucaoVerificarItem = `SELECT * FROM itens WHERE idItem = '${idItem}';`
+    var instrucaoSql = `SELECT
+                        s.nome, 
+                        COUNT(DISTINCT i.idItem, i.fkUsuario) AS quantidade
+                        FROM itens i
+                        JOIN pacotes p
+                            ON i.fkPacote = p.idPacote
+                        JOIN salas s
+                            ON p.fkSala = s.idSala
+                        WHERE i.status = 1
+                        AND i.fkUsuario = ${idUsuario}
+                        GROUP BY s.nome;`;
+
+    return database.executar(instrucaoSql);
+}
+
+function buscarItemPorId(idItem, idCliente) {
+
+    var instrucaoVerificarItem = `SELECT * FROM itens WHERE idItem = '${idItem}' AND fkUsuario = '${idCliente}';`
 
     return database.executar(instrucaoVerificarItem);
 }
@@ -58,5 +67,6 @@ module.exports = {
     listar,
     buscarItemPorId,
     verificarStatusItem,
-    AtualizarStatusItem
+    AtualizarStatusItem,
+    getTFullItensByUserID
 };

@@ -17,7 +17,7 @@ function salvar(req, res) {
 }
 
 function buscarUsuarioPeloId(req, res) {
-  console.log(req.params.id);
+  //console.log(req.params.id);
   usuarioModel.buscarUsuarioPeloId(req.params.id)
   .then(resultado => {
     res.json(resultado);

@@ -13,11 +13,11 @@ function autenticar(req, res) {
         usuarioModel.autenticar(email, senha)
             .then(
                 function (resultadoAutenticar) {
-                    console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
+                    //console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
+                    //console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
                     if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
+                        //console.log(resultadoAutenticar);
 
 
                         res.json({
@@ -36,8 +36,8 @@ function autenticar(req, res) {
                 }
             ).catch(
                 function (erro) {
-                    console.log(erro);
-                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    //console.log(erro);
+                    //console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
             );
@@ -55,8 +55,8 @@ function validarEmail(req, res) {
         })
         // .catch(
         //     function (erro) {
-        //         console.log(erro);
-        //         console.log(
+        //         //console.log(erro);
+        //         //console.log(
         //             "Email já cadastrado no banco!",
         //             erro.sqlMessage
         //         );
@@ -92,11 +92,11 @@ function cadastrar(req, res) {
                         }
                     ).catch(
                         function (erro) {
-                            console.log(erro);
-                            console.log(
-                                "\nHouve um erro ao realizar o cadastro! Erro: ",
-                                erro.sqlMessage
-                            );
+                            //console.log(erro);
+                            //console.log(
+                            //     "\nHouve um erro ao realizar o cadastro! Erro: ",
+                            //     erro.sqlMessage
+                            // );
                             res.status(500).json(erro.sqlMessage);
                         }
                     );

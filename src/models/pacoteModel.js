@@ -16,7 +16,16 @@ function buscarPacotePorId(idPacote){
     return database.executar(instrucaoVerificarPacote);
 }
 
+function buscarPacotePorIdEPorUsuario(idPacote, idUsuario){
 
-module.exports = { cadastrar ,
-    buscarPacotePorId
+    var instrucaoVerificarPacote = `SELECT * FROM pacotes WHERE idPacote = ${idPacote} and fkUsuario = ${idUsuario};`
+
+    return database.executar(instrucaoVerificarPacote);
+}
+
+
+module.exports = { 
+    cadastrar ,
+    buscarPacotePorId,
+    buscarPacotePorIdEPorUsuario
 };

@@ -6,49 +6,54 @@
 comandos para mysql server
 */
 
+
 CREATE DATABASE stardewblog;
 USE stardewblog;
 
+
 CREATE TABLE usuario(
-id INT PRIMARY KEY AUTO_INCREMENT,
+idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(50),
 email VARCHAR(50),
 senha VARCHAR(30)
 );
 
+
 CREATE TABLE salas(
-idSala INT PRIMARY KEY,
+idSala INT,
 nome VARCHAR(50),
 fkUsuario INT,
+PRIMARY KEY(idSala,fkUsuario),
 CONSTRAINT ctFKUsuario 
 FOREIGN KEY(fkUsuario)
 REFERENCES usuario(idUsuario)
 );
 
 CREATE TABLE pacotes (
-idPacote INT PRIMARY KEY,
+idPacote INT,
 nome VARCHAR(50),
 fkSala INT,
 fkUsuario INT,
+PRIMARY KEY(idPacote, fkUsuario),
 CONSTRAINT ctFkSala
 FOREIGN KEY(fkSala)
 REFERENCES salas(idSala),
-CONSTRAINT ctFKUsuario 
+CONSTRAINT ckFkUsuario 
 FOREIGN KEY(fkUsuario)
 REFERENCES usuario(idUsuario)
 );
 
 CREATE TABLE itens (
-idItem INT PRIMARY KEY,
+idItem INT,
 nome VARCHAR(50),
 fkPacote INT,
 fkUsuario INT,
 status TINYINT,
-CONSTRAINT ckFkUsuario
+PRIMARY KEY (idItem, fkUsuario),
+CONSTRAINT ckFrkUsuario
 FOREIGN KEY (fkUsuario)
-REFERENCES usuario(idUsuario)
+REFERENCES usuario(idUsuario),
 CONSTRAINT ctFkPacote
 FOREIGN KEY (fkPacote) 
 REFERENCES pacotes(idPacote)
 );
-

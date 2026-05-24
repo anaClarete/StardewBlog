@@ -6,7 +6,7 @@ function buscarUltimasMedidas(req, res) {
 
     var idAquario = req.params.idAquario;
 
-    console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+    //console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
     medidaModel.buscarUltimasMedidas(idAquario, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
@@ -15,8 +15,8 @@ function buscarUltimasMedidas(req, res) {
             res.status(204).send("Nenhum resultado encontrado!")
         }
     }).catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        //console.log(erro);
+        //console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
@@ -26,7 +26,7 @@ function buscarMedidasEmTempoReal(req, res) {
 
     var idAquario = req.params.idAquario;
 
-    console.log(`Recuperando medidas em tempo real`);
+    //console.log(`Recuperando medidas em tempo real`);
 
     medidaModel.buscarMedidasEmTempoReal(idAquario).then(function (resultado) {
         if (resultado.length > 0) {
@@ -35,8 +35,8 @@ function buscarMedidasEmTempoReal(req, res) {
             res.status(204).send("Nenhum resultado encontrado!")
         }
     }).catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        //console.log(erro);
+        //console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }

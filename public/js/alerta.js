@@ -6,7 +6,7 @@ function obterdados(idAquario) {
             if (resposta.status == 200) {
                 resposta.json().then(resposta => {
 
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    //console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                     alertar(resposta, idAquario);
                 });

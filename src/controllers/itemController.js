@@ -6,21 +6,32 @@ function listar(req, res) {
     var idUsuario = req.params.idUsuario;
     var idSala = req.params.idSala;
     itemModel.listar(idUsuario, idSala).then(function (resultado) {
-
+        let valor = resultado[0].quantidade;
+        //console.log(valor);
 
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
-        res.status(200).json(resultado);
-        console.log(resultado)
+        res.status(200).json(valor);
     }).catch(function (erro) {
         res.status(500).json(erro.sqlMessage);
     })
+
+    
 }
 
+function listarCERTO(req, res) {
+    var idUsuario = req.params.idUsuario;
+    // var idSala = req.params.idSala;
+    itemModel.getTFullItensByUserID(idUsuario).then(function (resultado) {
+        res.status(200).json(resultado);
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    })
 
+    
+}
 
-
-function entregarItem(req, res) {
-    let dados = req['body']['dados'];
+async function entregarItem(req, res) {
+    let dados = req.body;
     let idCliente = dados['id_cliente'];
     let dadosSala = dados['dados_sala'];
     let dadosPacote = dados['dados_pacote'];
@@ -33,40 +44,46 @@ function entregarItem(req, res) {
     let idItem = dadosItem['id'];
     let nomeItem = dadosItem['nome'];
 
-    salaModel.buscarSalaPorId(idSala)
+    console.log("Entrei no controller do entregar item!");
+    await salaModel.buscarSalaPorIdEPorUsuario(idSala, idCliente)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 console.log('Sala já existe no banco');
-                res.status(400);
+                // res.status(400);
             } else {
-                salaModel.cadastrar(idCliente, idSala, nomeSala).then(function (resultado) {
-                    res.status(200).json(resultado);
+                salaModel.cadastrar(idCliente, idSala, nomeSala)
+                .then(function (resultado) {
+                    console.log(`Sala cadastrada para o usuario ${idCliente}`);
+                    
+                    // res.status(200).json(resultado);
                 }).catch(function (erro) {
                     res.status(500).json(erro.sqlMessage);
                 })
             }
         })
 
-    pacoteModel.buscarPacotePorId(idPacote)
+    await pacoteModel.buscarPacotePorIdEPorUsuario(idPacote, idCliente)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 console.log('Pacote já existe no banco');
-                res.status(400);
+                // res.status(400);
             } else {
-
                 pacoteModel.cadastrar(idCliente, idPacote, nomePacote, idSala).then(function (resultado) {
-                    res.status(200).json(resultado);
+                    console.log(`Pacote cadastrada para o usuario ${idCliente}`);
+                    // res.status(200).json(resultado);
                 }).catch(function (erro) {
+                    console.log(erro);
+                    
                     res.status(500).json(erro.sqlMessage);
                 })
             }
         })
 
-    itemModel.buscarItemPorId(idItem)
+    await itemModel.buscarItemPorId(idItem)
         .then(function (resultado) {
             if (resultado.length > 0) {
-                console.log('Item já existe no banco');
-                res.status(400);
+                //console.log('Item já existe no banco');
+                // res.status(400);
                 itemModel.verificarStatusItem(idItem)
                     .then(function (resultado) {
                         var statusItem = resultado[0].status;
@@ -87,7 +104,7 @@ function entregarItem(req, res) {
                         }
                     })
                     .catch(function (erro) {
-                        console.log(erro);
+                        res.status(500).json("Erro");
                     })
             } else {
                 itemModel.cadastrar(idItem, nomeItem, idPacote, idCliente).then(function (resultado) {
@@ -101,7 +118,8 @@ function entregarItem(req, res) {
 
 module.exports = {
     entregarItem,
-    listar
+    listar,
+    listarCERTO
 };
 
 
