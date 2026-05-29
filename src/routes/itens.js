@@ -17,6 +17,10 @@ router.post("/entregar_item", function (req, res) {
 //     itemController.listar(req, res);
 // });
 
+router.get("/listarTotal/:idUsuario", function(req,res){
+    itemController.listarTotal(req,res);
+});
+
 router.get("/listar/:idUsuario", function (req, res) {
 
     //console.log("Entrou na rota listar");

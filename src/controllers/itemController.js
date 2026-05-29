@@ -30,6 +30,20 @@ function listar(req, res) {
     
 }
 
+
+function listarTotal(req, res) {
+    var idUsuario = req.params.idUsuario;
+    // var idSala = req.params.idSala;
+    itemModel.pegarTotalItensUsuario(idUsuario).then(function (resultado) {
+        res.status(200).json(resultado);
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    })
+
+    
+}
+
+
 async function entregarItem(req, res) {
     let dados = req.body;
     let idCliente = dados['id_cliente'];
@@ -118,7 +132,8 @@ async function entregarItem(req, res) {
 
 module.exports = {
     entregarItem,
-    listar
+    listar,
+    listarTotal
 };
 
 

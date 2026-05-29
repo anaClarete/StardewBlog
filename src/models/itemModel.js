@@ -27,6 +27,19 @@ function pegarItensPeloIdUsuario(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+
+
+function pegarTotalItensUsuario(idUsuario) {
+
+    var instrucaoSql = `SELECT
+                        COUNT(*) AS quantidade
+                        FROM itens i
+                        WHERE i.fkUsuario = ${idUsuario};`;
+
+    return database.executar(instrucaoSql);
+}
+
+
 function buscarItemPorId(idItem, idCliente) {
 
     var instrucaoVerificarItem = `SELECT * FROM itens WHERE idItem = '${idItem}' AND fkUsuario = '${idCliente}';`
@@ -51,5 +64,6 @@ module.exports = {
     buscarItemPorId,
     verificarStatusItem,
     AtualizarStatusItem,
-    pegarItensPeloIdUsuario
+    pegarItensPeloIdUsuario,
+    pegarTotalItensUsuario
 };

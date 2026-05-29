@@ -53,7 +53,7 @@
                 <h1>Progresso Geral</h1>
                 <div class="barra-progresso">
                     <div class="barra">
-                        <div class="progresso"></div>
+                        <div id="progresso"></div>
                     </div>
                     <div class="porcentagem">
                         <h1>45%</h1>
@@ -439,6 +439,34 @@
 
     window.onload = obterValores;
 
+
+    function obterValorTotal(idUsuario){
+        return fetch(`/itens/listarTotal/${idUsuario}`, {
+            cache: 'no-store',
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json().then(function (resposta) {
+                    //console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    // resposta.reverse();
+                    //console.log(resposta);
+                    return resposta;
+                    //plotarGrafico(resposta, idSala);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                return 0;
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados: ${error.message}`);
+                return 0;
+            });
+    }
+
     function obterValores() {
 
         obterDadosGrafico(idUsuario).then(function (resultado) {
@@ -482,6 +510,14 @@
             console.log(valores);
             
             plotarGrafico(valores);
+
+            obterValorTotal(idUsuario).then(function(resultado){
+
+                valor = (resultado[0]['quantidade'] / 66) * 100;
+                let progressoGeral = document.getElementById("progresso");
+                progressoGeral.style.width = valor + "%";
+                console.log(valor);
+            })
         });
 
         // for (let i = 1; i <= 5; i++) {

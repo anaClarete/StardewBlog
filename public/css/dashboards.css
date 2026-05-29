@@ -119,9 +119,9 @@ body {
   margin-bottom: 20px;
 }
 
-.progresso {
+#progresso {
   height: 100%;
-  width: 50%;
+  width: 0%;
   background-color: green;
   border-radius: 10px;
 
