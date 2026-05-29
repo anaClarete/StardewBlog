@@ -83,7 +83,7 @@
                     <img src="../assets/imgs/despensa.png" width="80px">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
-                            <div class="progresso-card"></div>
+                            <div id="progresso-card-despensa"></div>
                         </div>
                         <h4>60%</h4>
                     </div>
@@ -94,7 +94,7 @@
                     <img src="../assets/imgs/Tuna.png" width="60px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
-                            <div class="progresso-card" style="background-color: #4da6ff;"></div>
+                            <div id="progresso-card-aquario" style="background-color: #4da6ff;"></div>
                         </div>
                         <h4>33%</h4>
                     </div>
@@ -105,7 +105,7 @@
                     <img src="../assets/imgs/Wine.png" width="65px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
-                            <div class="progresso-card" style="background-color: #9966ff;"></div>
+                            <div id="progresso-card-artesanato" style="background-color: #9966ff;"></div>
                         </div>
                         <h4>40%</h4>
                     </div>
@@ -116,7 +116,7 @@
                     <img src="../assets/imgs/mural.png" width="85px">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
-                            <div class="progresso-card" style="background-color: #ffb366;"></div>
+                            <div id="progresso-card-quadro" style="background-color: #ffb366;"></div>
                         </div>
                         <h4>50%</h4>
                     </div>
@@ -127,7 +127,7 @@
                     <img src="../assets/imgs/cofre.png" width="75px">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
-                            <div class="progresso-card" style="background-color: #ffff80;"></div>
+                            <div id="progresso-card-cofre" style="background-color: #ffff80;"></div>
                         </div>
                         <h4>0%</h4>
                     </div>
@@ -449,18 +449,28 @@
                 if (resultado[i]['nome'] == 'despensa') {
                     valor = (resultado[i]['quantidade'] / 15) * 100;
                     valores[0] = valor;
+                    let despensa = document.getElementById("progresso-card-despensa");
+                    despensa.style.width = valor + "%";
                 } else if (resultado[i]['nome'] == 'aquario') {
                     valor = (resultado[i]['quantidade'] / 16) * 100;
                     valores[1] = valor;
+                    let aquario = document.getElementById("progresso-card-aquario");
+                    aquario.style.width = valor + "%";
                 } else if (resultado[i]['nome'] == 'saladeartesanato') {
                     valor = (resultado[i]['quantidade'] / 12) * 100;
                     valores[2] = valor;
+                    let artesanato = document.getElementById("progresso-card-artesanato");
+                    artesanato.style.width = valor + "%";
                 } else if (resultado[i]['nome'] == 'quadrodeavisos') {
                     valor = (resultado[i]['quantidade'] / 19) * 100;
                     valores[3] = valor;
+                    let quadro = document.getElementById("progresso-card-quadro");
+                    quadro.style.width = valor + "%";
                 } else {
                     valor = (resultado[i]['quantidade'] / 4) * 100;
                     valores[4] = valor;
+                    let cofre = document.getElementById("progresso-card-cofre");
+                    cofre.style.width = valor + "%";
                 }
                 // valores.push(valor);
             }

@@ -198,13 +198,44 @@ body {
   position: relative;
 }
 
-.progresso-card {
+#progresso-card-despensa {
   height: 100%;
-  width: 60%;
+  width: 0%;
   display: block;
   background-color: green;
   border-radius: 10px;
+}
 
+#progresso-card-aquario {
+  height: 100%;
+  width: 0%;
+  display: block;
+  background-color: #4da6ff;
+  border-radius: 10px;
+}
+
+#progresso-card-artesanato {
+  height: 100%;
+  width: 0%;
+  display: block;
+  background-color: #9966ff;
+  border-radius: 10px;
+}
+
+#progresso-card-quadro {
+  height: 100%;
+  width: 0%;
+  display: block;
+  background-color: #ffb366;;
+  border-radius: 10px;
+}
+
+#progresso-card-cofre {
+  height: 100%;
+  width: 0%;
+  display: block;
+  background-color: #ffff80;
+  border-radius: 10px;
 }
 
 #pacotes-por-sala {
