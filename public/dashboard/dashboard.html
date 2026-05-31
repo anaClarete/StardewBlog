@@ -465,10 +465,7 @@
 
     idUsuario = sessionStorage.ID_USUARIO;
 
-    // var valores = [];
-
     window.onload = obterValores;
-
 
     function obterValorTotal(idUsuario) {
         return fetch(`/itens/listarTotal/${idUsuario}`, {
@@ -480,11 +477,7 @@
         }).then(function (response) {
             if (response.ok) {
                 return response.json().then(function (resposta) {
-                    //console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    // resposta.reverse();
-                    //console.log(resposta);
                     return resposta;
-                    //plotarGrafico(resposta, idSala);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -501,7 +494,6 @@
 
         obterDadosGrafico(idUsuario).then(function (resultado) {
             let valores = [0, 0, 0, 0, 0];
-            //     let valor = await obterDadosGrafico(idUsuario, i);
 
             for (let i = 0; i < resultado.length; i++) {
                 if (resultado[i]['nome'] == 'despensa') {
@@ -540,7 +532,6 @@
                     let porcentagem = document.getElementById("h4-cofre");
                     porcentagem.innerHTML = `${valor.toFixed(2)}%`;
                 }
-                // valores.push(valor);
             }
 
             console.log("Info dados grafico ----------------------------------");
@@ -561,36 +552,9 @@
                 porcentagem.innerHTML = `${valor.toFixed(2)}%`;
             })
         });
-
-        // for (let i = 1; i <= 5; i++) {
-        //     if (i == 1) {
-        //         valor *= 6.66;
-        //     } else if (i == 2) {
-        //         valor *= 6.25;
-        //     } else if (i == 3) {
-        //         valor *= 8.33;
-        //     } else if (i == 4) {
-        //         valor *= 5.26;
-        //     } else {
-        //         valor *= 25;
-        //     }
-
-        //     valor = Number(valor.toFixed(2));
-
-        //     valores.push(valor);
-        // }
-        // console.log(valores);
-        // plotarGrafico(valores);
-
     }
 
-    async function obterDadosGrafico(idUsuario, idSala) {
-
-        //alterarTitulo(idSala)
-
-        // if (proximaAtualizacao != undefined) {
-        //     clearTimeout(proximaAtualizacao);
-        // }
+    async function obterDadosGrafico(idUsuario) {
 
         return fetch(`/itens/listar/${idUsuario}`, {
             cache: 'no-store',
@@ -601,11 +565,7 @@
         }).then(function (response) {
             if (response.ok) {
                 return response.json().then(function (resposta) {
-                    //console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    // resposta.reverse();
-                    //console.log(resposta);
                     return resposta;
-                    //plotarGrafico(resposta, idSala);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -616,8 +576,6 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
                 return 0;
             });
-
-
     }
 
 
@@ -665,26 +623,13 @@
 
     }
 
-    //  async function testar(idUsuario, idSala) {
 
-    //   let dados = await obterDadosGrafico(idUsuario, idSala);
-
-    //    //console.log(dados);
-    //  }
-
-    //  testar(1, 1);
     var myChart;
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    
     function plotarGrafico(valores) {
 
-        //console.log('iniciando plotagem do gráfico...');
-
-        // Criando estrutura para plotar gráfico - labels
         let labels = ['Despensa', 'Aquário', 'Sala de Artesanato', 'Quadro de Avisos', 'Cofre'];
 
-        // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
             datasets: [{
@@ -696,27 +641,6 @@
             }],
         };
 
-        //console.log('----------------------------------------------')
-        //console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-        //console.log(valores)
-
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
-        // for (i = 0; i < resposta.length; i++) {
-        //     var registro = resposta[i];
-        //     labels.push(registro.momento_grafico);
-        //     dados.datasets[0].data.push(registro.umidade);
-        //     dados.datasets[1].data.push(registro.temperatura);
-        // }
-
-        //console.log('----------------------------------------------')
-        //console.log('O gráfico será plotado com os respectivos valores:')
-        //console.log('Labels:')
-        //console.log(labels)
-        //console.log('Dados:')
-        //console.log(dados.datasets)
-        //console.log('----------------------------------------------')
-
-        // Criando estrutura para plotar gráfico - config
         const config = {
             type: 'bar',
             data: dados,
@@ -745,22 +669,12 @@
         console.log(config);
 
 
-        // Adicionando gráfico criado em div na tela
         myChart = new Chart(
             document.getElementById("grafico_barras"),
             config
         );
-
-        //setTimeout(() => atualizarGrafico(dados, myChart), 2000);
     }
 
-    // `myChartCanvas${grafico_barras}`
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
     function atualizarGrafico(idUsuario) {
 
         if (myChart) {
