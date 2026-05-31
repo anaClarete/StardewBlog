@@ -82,7 +82,7 @@
         <div class="div-salas">
             <h3>SALAS DO CENTRO COMUNITÁRIO</h3>
             <div class="salas">
-                <div class="sala">
+                <div class="sala" onclick="trocarConteudo('despensa')">
                     <h4>DESPENSA</h4>
                     <img src="../assets/imgs/despensa.png" width="80px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
@@ -92,7 +92,7 @@
                         <h4 id="h4-despensa">0%</h4>
                     </div>
                 </div>
-                <div class="sala">
+                <div class="sala" onclick="trocarConteudo('aquario')">
                     <h4>AQUÁRIO</h4>
                     <img src="../assets/imgs/Tuna.png" width="60px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
@@ -102,7 +102,7 @@
                         <h4 id="h4-aquario">0%</h4>
                     </div>
                 </div>
-                <div class="sala">
+                <div class="sala" onclick="trocarConteudo('artesanato')">
                     <h4>SALA DE ARTESANATO</h4>
                     <img src="../assets/imgs/Wine.png" width="65px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
@@ -112,7 +112,7 @@
                         <h4 id="h4-artesanato">0%</h4>
                     </div>
                 </div>
-                <div class="sala">
+                <div class="sala" onclick="trocarConteudo('quadro')">
                     <h4>QUADRO DE AVISOS</h4>
                     <img src="../assets/imgs/mural.png" width="85px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
@@ -122,7 +122,7 @@
                         <h4 id="h4-quadro">0%</h4>
                     </div>
                 </div>
-                <div class="sala">
+                <div class="sala" onclick="trocarConteudo('cofre')">
                     <h4>COFRE</h4>
                     <img src="../assets/imgs/cofre.png" width="75px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
@@ -425,7 +425,8 @@
             labels: ['Despensa', 'Aquário', 'Sala de Artesanato', 'Quadro de Avisos', 'Cofre'],
             datasets: [{
                 data: [20, 20, 15, 25, 20],
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor:  ['#ff80aa', ' #4da6ff', '#9966ff', '#ff9933', '#ffff66']
             }]
         },
         options: {
@@ -688,7 +689,7 @@
             labels: labels,
             datasets: [{
                 data: valores,
-                backgroundColor: ['#ff80aa', ' #4da6ff', '#9966ff', '#ff9933', '#ffff80'],
+                backgroundColor: ['#ff80aa', ' #4da6ff', '#9966ff', '#ff9933', '#ffff66'],
                 borderColor: 'rgb(75, 192, 192)',
                 borderRadius: 10,
                 tension: 0.1

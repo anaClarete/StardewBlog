@@ -39,7 +39,8 @@ body {
 .header-left {
   min-width: 220px;
   width: 200px;
-  min-height: calc(100vh - 40px);
+  /* min-height: calc(100vh - 40px); */
+  height: fit-content;
   background-color: #ffffe6;
   margin-top: 0%;
   color: #663300;
@@ -194,6 +195,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor:pointer;
+}
+
+.sala:hover{
+  border: solid #669900 3px;
 }
 
 .barra-progresso-cards {
@@ -220,7 +226,7 @@ body {
   height: 100%;
   width: 0%;
   display: block;
-  background-color: green;
+  background-color: #ff80aa;
   border-radius: 10px;
 }
 
@@ -244,7 +250,7 @@ body {
   height: 100%;
   width: 0%;
   display: block;
-  background-color: #ffb366;
+  background-color: #ff9933;
   ;
   border-radius: 10px;
 }
@@ -253,7 +259,7 @@ body {
   height: 100%;
   width: 0%;
   display: block;
-  background-color: #ffff80;
+  background-color: #efef46;
   border-radius: 10px;
 }
 
