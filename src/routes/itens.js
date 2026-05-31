@@ -32,4 +32,9 @@ router.get("/atualizar", function(req,res){
     itemController.atualizar(req,res);
 });
 
+
+router.get("/carregarItens/:idUsuario", function(req,res){
+    itemController.carregarItens(req, res);
+})
+
 module.exports = router;

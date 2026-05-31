@@ -130,10 +130,23 @@ async function entregarItem(req, res) {
         })
 }
 
+
+function carregarItens(req, res) {
+    var idUsuario = req.params.idUsuario;
+    // var idSala = req.params.idSala;
+    itemModel.carregarItensDoUsuario(idUsuario).then(function (resultado) {
+        res.status(200).json(resultado);
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    })
+
+}
+
 module.exports = {
     entregarItem,
     listar,
-    listarTotal
+    listarTotal,
+    carregarItens
 };
 
 

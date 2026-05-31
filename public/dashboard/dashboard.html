@@ -36,12 +36,13 @@
             <h1>Centro Comunitario</h1>
 
             <h2 style="color:#669900 ;">Bem vindo de volta, <span id="b_usuario">Usuário</span>!</h2>
-            <p onclick="trocarConteudo('visaoGeral')">Visao geral</p>
-            <p onclick="trocarConteudo('despensa')">Despensa</p>
-            <p onclick="trocarConteudo('aquario')">Aquario</p>
-            <p onclick="trocarConteudo('artesanato')">Sala de Artesanato</p>
-            <p onclick="trocarConteudo('quadro')">Quadro de avisos</p>
-            <p onclick="trocarConteudo('cofre')">Cofre</p>
+            <p class="conteudo" onclick="trocarConteudo('visaoGeral')">Visao geral</p>
+            <p class="conteudo" onclick="trocarConteudo('despensa')">Despensa</p>
+            <p class="conteudo" onclick="trocarConteudo('aquario')">Aquario</p>
+            <p class="conteudo" onclick="trocarConteudo('artesanato')">Sala de Artesanato</p>
+            <p class="conteudo" onclick="trocarConteudo('quadro')">Quadro de avisos</p>
+            <p class="conteudo" onclick="trocarConteudo('cofre')">Cofre</p>
+            <p class="conteudo" onclick="sair()">Sair</p>
         </div>
         <!-- <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -56,20 +57,23 @@
                         <div id="progresso"></div>
                     </div>
                     <div class="porcentagem">
-                        <h1>45%</h1>
+                        <h1 id="h1-geral">0%</h1>
                     </div>
 
                 </div>
 
-                <p>15/33 pacotes completos</p>
             </div>
             <div class="info">
 
                 <div class="card-recompensa">
-                    <div class="title">RECOMPENSA</div>
-                    <div class="conteudo">
-                        <img src="../assets/imgs/recompensa-despensa.png" width="100px">
-                        <p>Sementes de estação (30unidades)</p>
+                    <div class="titulo-imagem">
+                        <div class="title">RECOMPENSA</div>
+                        <div class="conteudo">
+                            <img src="../assets/imgs/CC_Complete.png" width="250px">
+                        </div>
+                        <div class="descricao-recompensa">
+                            <p>Centro Comunitario restaurado</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,14 +84,13 @@
             <div class="salas">
                 <div class="sala">
                     <h4>DESPENSA</h4>
-                    <img src="../assets/imgs/despensa.png" width="80px">
+                    <img src="../assets/imgs/despensa.png" width="80px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
                             <div id="progresso-card-despensa"></div>
                         </div>
-                        <h4>60%</h4>
+                        <h4 id="h4-despensa">0%</h4>
                     </div>
-                    <p>3 / 5 pacotes</p>
                 </div>
                 <div class="sala">
                     <h4>AQUÁRIO</h4>
@@ -96,9 +99,8 @@
                         <div class="barra-card">
                             <div id="progresso-card-aquario" style="background-color: #4da6ff;"></div>
                         </div>
-                        <h4>33%</h4>
+                        <h4 id="h4-aquario">0%</h4>
                     </div>
-                    <p>2 / 6 pacotes</p>
                 </div>
                 <div class="sala">
                     <h4>SALA DE ARTESANATO</h4>
@@ -107,31 +109,28 @@
                         <div class="barra-card">
                             <div id="progresso-card-artesanato" style="background-color: #9966ff;"></div>
                         </div>
-                        <h4>40%</h4>
+                        <h4 id="h4-artesanato">0%</h4>
                     </div>
-                    <p>2 / 5 pacotes</p>
                 </div>
                 <div class="sala">
                     <h4>QUADRO DE AVISOS</h4>
-                    <img src="../assets/imgs/mural.png" width="85px">
+                    <img src="../assets/imgs/mural.png" width="85px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
                             <div id="progresso-card-quadro" style="background-color: #ffb366;"></div>
                         </div>
-                        <h4>50%</h4>
+                        <h4 id="h4-quadro">0%</h4>
                     </div>
-                    <p>2 / 4 pacotes</p>
                 </div>
                 <div class="sala">
                     <h4>COFRE</h4>
-                    <img src="../assets/imgs/cofre.png" width="75px">
+                    <img src="../assets/imgs/cofre.png" width="75px" style="margin: 20px auto;">
                     <div class="barra-progresso-cards">
                         <div class="barra-card">
                             <div id="progresso-card-cofre" style="background-color: #ffff80;"></div>
                         </div>
-                        <h4>0%</h4>
+                        <h4 id="h4-cofre">0%</h4>
                     </div>
-                    <p>0 / 3 pacotes</p>
                 </div>
             </div>
 
@@ -348,12 +347,21 @@
             areaPacotes.innerHTML = conteudos_pacotes[sala];
         }
 
+        carregarItensEntregues();
+
     }
 
-    
+    function sair() {
+        window.location = "../index.html";
+
+    }
+
 
     function entregarItem(elemento) {
-        
+
+        elemento.checked = true;
+        elemento.disabled = true;
+
         elemento = elemento.parentNode;
 
         var dadosItem = elemento.id;
@@ -397,14 +405,13 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(dados)
-        }).then((resposta) =>  {
+        }).then((resposta) => {
             console.log(resposta);
             atualizarGrafico(idUsuario);
         })
-        .catch((erro) => {
-            console.log("Erro:", erro);
-        })
-
+            .catch((erro) => {
+                console.log("Erro:", erro);
+            })
 
 
     }
@@ -424,6 +431,28 @@
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Distribuição de pacotes por sala',
+                    font: {
+                        size: 30
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        font: {
+                            size: 20
+                        },
+                        padding: 10
+                    }
+                },
+                font: {
+                    size: 25
+                }
+            }
         }
     })
 </script>
@@ -440,7 +469,7 @@
     window.onload = obterValores;
 
 
-    function obterValorTotal(idUsuario){
+    function obterValorTotal(idUsuario) {
         return fetch(`/itens/listarTotal/${idUsuario}`, {
             cache: 'no-store',
             method: "GET",
@@ -471,7 +500,7 @@
 
         obterDadosGrafico(idUsuario).then(function (resultado) {
             let valores = [0, 0, 0, 0, 0];
-                    //     let valor = await obterDadosGrafico(idUsuario, i);
+            //     let valor = await obterDadosGrafico(idUsuario, i);
 
             for (let i = 0; i < resultado.length; i++) {
                 if (resultado[i]['nome'] == 'despensa') {
@@ -479,44 +508,56 @@
                     valores[0] = valor;
                     let despensa = document.getElementById("progresso-card-despensa");
                     despensa.style.width = valor + "%";
+                    let porcentagem = document.getElementById("h4-despensa");
+                    porcentagem.innerHTML = `${valor.toFixed(2)}%`;
                 } else if (resultado[i]['nome'] == 'aquario') {
                     valor = (resultado[i]['quantidade'] / 16) * 100;
                     valores[1] = valor;
                     let aquario = document.getElementById("progresso-card-aquario");
                     aquario.style.width = valor + "%";
+                    let porcentagem = document.getElementById("h4-aquario");
+                    porcentagem.innerHTML = `${valor.toFixed(2)}%`;
                 } else if (resultado[i]['nome'] == 'saladeartesanato') {
                     valor = (resultado[i]['quantidade'] / 12) * 100;
                     valores[2] = valor;
                     let artesanato = document.getElementById("progresso-card-artesanato");
                     artesanato.style.width = valor + "%";
+                    let porcentagem = document.getElementById("h4-artesanato");
+                    porcentagem.innerHTML = `${valor.toFixed(2)}%`;
                 } else if (resultado[i]['nome'] == 'quadrodeavisos') {
                     valor = (resultado[i]['quantidade'] / 19) * 100;
                     valores[3] = valor;
                     let quadro = document.getElementById("progresso-card-quadro");
                     quadro.style.width = valor + "%";
+                    let porcentagem = document.getElementById("h4-quadro");
+                    porcentagem.innerHTML = `${valor.toFixed(2)}%`;
                 } else {
                     valor = (resultado[i]['quantidade'] / 4) * 100;
                     valores[4] = valor;
                     let cofre = document.getElementById("progresso-card-cofre");
                     cofre.style.width = valor + "%";
+                    let porcentagem = document.getElementById("h4-cofre");
+                    porcentagem.innerHTML = `${valor.toFixed(2)}%`;
                 }
                 // valores.push(valor);
             }
 
             console.log("Info dados grafico ----------------------------------");
-            
+
 
             console.log(resultado);
             console.log(valores);
-            
+
             plotarGrafico(valores);
 
-            obterValorTotal(idUsuario).then(function(resultado){
+            obterValorTotal(idUsuario).then(function (resultado) {
 
                 valor = (resultado[0]['quantidade'] / 66) * 100;
                 let progressoGeral = document.getElementById("progresso");
                 progressoGeral.style.width = valor + "%";
                 console.log(valor);
+                let porcentagem = document.getElementById("h1-geral");
+                porcentagem.innerHTML = `${valor.toFixed(2)}%`;
             })
         });
 
@@ -578,6 +619,51 @@
 
     }
 
+
+
+    function carregarItensEntregues() {
+
+        console.log('Executando função carregar itens')
+        return fetch(`/itens/carregarItens/${idUsuario}`, {
+            cache: 'no-store',
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json().then(function (resposta) {
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        let idItem = resposta[i].idItem;
+                        let nomeItem = resposta[i].nome;
+
+                        let elemento = document.getElementById(`${idItem}#${nomeItem}`);
+
+                        console.log(`${idItem}#${nomeItem}`);
+                        console.log(elemento);
+
+                        if (elemento) {
+                            let checkbox = elemento.querySelector("input");
+
+                            console.log(checkbox);
+                            checkbox.checked = true;
+                            checkbox.disabled = true;
+                        }
+                    }
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                return 0;
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos itens entregues: ${error.message}`);
+                return 0;
+            });
+
+    }
+
     //  async function testar(idUsuario, idSala) {
 
     //   let dados = await obterDadosGrafico(idUsuario, idSala);
@@ -604,6 +690,7 @@
                 data: valores,
                 backgroundColor: ['#ff80aa', ' #4da6ff', '#9966ff', '#ff9933', '#ffff80'],
                 borderColor: 'rgb(75, 192, 192)',
+                borderRadius: 10,
                 tension: 0.1
             }],
         };
@@ -633,6 +720,18 @@
             type: 'bar',
             data: dados,
             options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Análise do progresso das entregas',
+                        font: {
+                            size: 30
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         min: 0,
@@ -643,7 +742,7 @@
         };
 
         console.log(config);
-        
+
 
         // Adicionando gráfico criado em div na tela
         myChart = new Chart(

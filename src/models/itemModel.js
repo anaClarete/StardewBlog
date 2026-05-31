@@ -27,6 +27,12 @@ function pegarItensPeloIdUsuario(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function carregarItensDoUsuario(idUsuario){
+
+    var instrucaoSql = `SELECT * FROM itens WHERE fkUsuario = ${idUsuario};`;
+
+    return database.executar(instrucaoSql);
+}
 
 
 function pegarTotalItensUsuario(idUsuario) {
@@ -65,5 +71,6 @@ module.exports = {
     verificarStatusItem,
     AtualizarStatusItem,
     pegarItensPeloIdUsuario,
-    pegarTotalItensUsuario
+    pegarTotalItensUsuario,
+    carregarItensDoUsuario
 };
